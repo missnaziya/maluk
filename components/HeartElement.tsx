@@ -18,8 +18,8 @@ const HeartElement = ({wishQuantity}: {wishQuantity: number}) => {
   return (
     <div className="relative">
       <Link href="/wishlist">
-        <FaHeart className="text-2xl text-black" />
-        <span className="block w-6 h-6 font-bold bg-orange-600 text-white rounded-full flex justify-center items-center absolute top-[-16px] right-[-19px]">
+        <FaHeart className="text-2xl text-[#ab6a49]" />
+        <span className="block w-6 h-6 font-bold bg-[#c28565] text-[#f9f3f0] rounded-full flex justify-center items-center absolute top-[-16px] right-[-19px]">
           { wishQuantity }
         </span>
       </Link>

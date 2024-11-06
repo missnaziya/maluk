@@ -64,3 +64,21 @@
   color: #fff;
   background: #f37321
 }
+:root {
+  --theme-color: #c28565;
+  --theme-color2: #ab6a49;
+  --title-color: #0d0d0d;
+  --body-color: #6e6e6e;
+  --smoke-color: #f9f3f0;
+  --smoke-color2: #e8cdbf;
+  --smoke-color3: #f4e8e1;
+  --black-color: #000000;
+  --black-color2: #1b1b1b;
+  --gray-color: #b2b2b2;
+  --white-color: #ffffff;
+  --light-color: #cdcdcd;
+  --yellow-color: #ffb539;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --border-color: #e0e0e0;
+}
