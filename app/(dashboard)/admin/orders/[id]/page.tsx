@@ -57,19 +57,22 @@ const AdminSingleOrder = () => {
   const params = useParams<{ id: string }>();
 
   const router = useRouter();
-
+  
+  
   useEffect(() => {
     const fetchOrderData = async () => {
       const response = await fetch(
-        `${ENDPOINT.BASE_URL}1/api/orders/${params?.id}`
+        `${process.env.NEXT_PUBLIC_BASE_URL}1/api/orders/${params?.id}`
+        // `${ENDPOINT.BASE_URL}1/api/orders/${params?.id}`
       );
       const data: Order = await response.json();
       setOrder(data);
     };
-
+    
     const fetchOrderProducts = async () => {
       const response = await fetch(
-        `${ENDPOINT.BASE_URL}/api/order-product/${params?.id}`
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/order-product/${params?.id}`
+        // `${ENDPOINT.BASE_URL}/api/order-product/${params?.id}`
       );
       const data: OrderProduct[] = await response.json();
       setOrderProducts(data);
@@ -107,7 +110,8 @@ const AdminSingleOrder = () => {
         return;
       }
 
-      fetch(`${ENDPOINT.BASE_URL}/api/orders/${order?.id}`, {
+      fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/orders/${order?.id}`, {
+      // fetch(`${ENDPOINT.BASE_URL}/api/orders/${order?.id}`, {
         method: "PUT", // or 'PUT'
         headers: {
           "Content-Type": "application/json",
@@ -135,11 +139,13 @@ const AdminSingleOrder = () => {
     };
 
     fetch(
-      `${ENDPOINT.BASE_URL}/api/order-product/${order?.id}`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/order-product/${order?.id}`,
+      // `${ENDPOINT.BASE_URL}/api/order-product/${order?.id}`,
       requestOptions
     ).then((response) => {
       fetch(
-        `${ENDPOINT.BASE_URL}/api/orders/${order?.id}`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/orders/${order?.id}`,
+        // `${ENDPOINT.BASE_URL}/api/orders/${order?.id}`,
         requestOptions
       ).then((response) => {
         toast.success("Order deleted successfully");
@@ -371,7 +377,7 @@ const AdminSingleOrder = () => {
                   {product?.product?.title}
                 </Link>
                 <p>
-                  ${product?.product?.price} * {product?.quantity} items
+                ₹{product?.product?.price} * {product?.quantity} items
                 </p>
               </div>
             </div>

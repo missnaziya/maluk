@@ -5,8 +5,8 @@ const OfferBanner = () => {
   return (
     <section
       style={{
-        backgroundImage: "url('/offbanner.webp')",
-        backgroundSize: 'cover',
+        backgroundImage: "url('/banner-1.png')",
+        // backgroundSize: 'cover',
         backgroundPosition: 'center',
         padding: '10rem 0',
       }}

@@ -24,61 +24,33 @@
       linear-gradient(-45deg, white 50%, #3B82F6 50.99%);
 }
 
-.single-product .product-img {
-  position: relative;
-  overflow: hidden
+/* Define responsive max-widths in CSS */
+.responsive-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.p_icon {
-  width: 95%;
-  padding: 7px 30px;
-  position: absolute;
-  bottom: -100px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
-  background: #f37321;
-  transition: all 400ms ease
+@media (min-width: 640px) {
+  /* Small screens and up */
+  .responsive-container {
+    max-width: 1024px; /* lg in Tailwind */
+  }
 }
 
-.p_icon a {
-  display: inline-block;
-  height: 36px;
-  line-height: 40px;
-  width: 36px;
-  text-align: center;
-  background: #fff;
-  border-radius: 30px;
-  color: #2a2a2a;
-  margin-right: 25px
+@media (min-width: 768px) {
+  /* Medium screens and up */
+  .responsive-container {
+    max-width: 1280px; /* xl in Tailwind */
+  }
 }
 
- .p_icon a:last-child {
-  margin-right: 0px
+@media (min-width: 1024px) {
+  /* Large screens and up */
+  .responsive-container {
+    max-width: 1536px; /* 2xl in Tailwind */
+  }
 }
 
- .p_icon a:hover {
-  color: #fff;
-  background: #f37321
-}
-:root {
-  --theme-color: #c28565;
-  --theme-color2: #ab6a49;
-  --title-color: #0d0d0d;
-  --body-color: #6e6e6e;
-  --smoke-color: #f9f3f0;
-  --smoke-color2: #e8cdbf;
-  --smoke-color3: #f4e8e1;
-  --black-color: #000000;
-  --black-color2: #1b1b1b;
-  --gray-color: #b2b2b2;
-  --white-color: #ffffff;
-  --light-color: #cdcdcd;
-  --yellow-color: #ffb539;
-  --success-color: #28a745;
-  --error-color: #dc3545;
-  --border-color: #e0e0e0;
-}
+
+

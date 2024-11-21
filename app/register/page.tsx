@@ -2,6 +2,7 @@
 import { CustomButton, SectionTitle } from "@/components";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -29,19 +30,19 @@ const RegisterPage = () => {
     const confirmPassword = e.target[4].value;
 
     if (!isValidEmail(email)) {
-      setError("Email is invalid");
+      // setError("Email is invalid");
       toast.error("Email is invalid");
       return;
     }
 
     if (!password || password.length < 8) {
-      setError("Password is invalid");
-      toast.error("Password is invalid");
+      // setError("Password is invalid. Password must be at least 8 characters long.");
+      toast.error("Password is invalid. Password must be at least 8 characters long.");
       return;
     }
 
     if (confirmPassword !== password) {
-      setError("Passwords are not equal");
+      // setError("Passwords are not equal");
       toast.error("Passwords are not equal");
       return;
     }
@@ -183,6 +184,9 @@ const RegisterPage = () => {
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
+                {/* <p className="text-sm text-gray-500 mt-1">
+              
+              </p> */}
               </div>
 
               <div className="flex items-center justify-between">
@@ -212,6 +216,13 @@ const RegisterPage = () => {
                   textSize="sm"
                 />
 
+                <div className="relative flex justify-center text-sm  mt-4 font-medium leading-6">
+                  <span className="bg-white px-6 text-gray-900">
+                 Already have an account <Link className=" text-blue-500" href="/login">
+                 login here 
+                 </Link>
+                  </span>
+                </div>
                 <p className="text-red-600 text-center text-[16px] my-4">
                   {error && error}
                 </p>

@@ -5,6 +5,7 @@ export type ProductInCart = {
   id: string;
   title: string;
   price: number;
+  salePrice: number;
   image: string;
   amount: number;
 };
@@ -13,6 +14,7 @@ export type State = {
   products: ProductInCart[];
   allQuantity: number;
   total: number;
+  
 };
 
 export type Actions = {
@@ -68,10 +70,11 @@ export const useProductStore = create<State & Actions>()(
       calculateTotals: () => {
         set((state) => {
           let amount = 0;
-          let total = 0;
+          let total  = 0;
           state.products.forEach((item) => {
             amount += item.amount;
-            total += item.amount * item.price;
+            total += item.amount * item.salePrice;
+
           });
 
           return {

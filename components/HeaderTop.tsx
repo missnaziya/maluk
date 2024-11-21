@@ -1,54 +1,39 @@
-// *********************
-// Role of the component: Topbar of the header
-// Name of the component: HeaderTop.tsx
-// Developer: Aleksandar Kuzmanovic
-// Version: 1.0
-// Component call: <HeaderTop />
-// Input parameters: no input parameters
-// Output: topbar with phone, email and login and register links
-// *********************
-
 'use client'
 import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
-import React, { useState } from 'react' // Import useState for managing dropdown state
+import React, { useState } from 'react'
 import toast from 'react-hot-toast'
-import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
 import {
   FaArrowRightToBracket,
-  FaHeadphones,
-  FaRegEnvelope,
-  FaRegUser
+  FaRegUser,
 } from 'react-icons/fa6'
 
 const HeaderTop = () => {
   const { data: session }: any = useSession()
-  const [dropdownOpen, setDropdownOpen] = useState(false) // State for dropdown visibility
+  const [dropdownOpen, setDropdownOpen] = useState(false)
 
   const handleLogout = () => {
-    setTimeout(() => signOut(), 1000)
+    setTimeout(() => signOut({ callbackUrl: '/login' }), 1000)
     toast.success('Logout successful!')
   }
 
   const toggleDropdown = () => {
-    setDropdownOpen(prev => !prev) // Toggle dropdown state
+    setDropdownOpen(prev => !prev)
+    setTimeout(() => {
+      setDropdownOpen(false)
+    }, 5000)
   }
 
   return (
-    <div className='h-10 text-white bg-[var(--theme-color2)] max-lg:px-5 max-lg:h-16 max-[573px]:px-0'>
-      <div className='flex justify-between h-full max-lg:flex-col max-lg:justify-center max-lg:items-center max-w-screen-2xl mx-auto px-12 max-[573px]:px-0'>
+    <div className='h-10 text-white bg-black max-lg:px-5 max-lg:h-16 max-[573px]:px-0'>
+      <div className='flex justify-between h-full max-lg:flex-col max-lg:justify-center max-lg:items-center max-w-screen-2xl mx-auto  max-[573px]:px-0'>
         <ul className='flex items-center h-full gap-x-5 max-[370px]:text-sm max-[370px]:gap-x-2'>
-        <li className='flex items-center gap-x-2 font-semibold'>
-            <FaEnvelope className='text-white' /> {/* Email Icon */}
-            <a href='mailto:operations@malukforever.com'>
-              operations@malukforever.com
-            </a>
+          {/* Marquee for displaying offers */}
+          <li className='font-semibold overflow-hidden text-yellow-500 w-full max-lg:w-[90%]'>
+            <div className='scrolling-text text-sm max-md:text-xs'>
+              🎉 Flat 50% Off on Sheetmasks! | 🚚 Free Shipping on Orders Above $100 | 🛍️ New Arrivals in Fashion!
+            </div>
           </li>
-          <li className='flex items-center gap-x-2 font-semibold'>
-            <FaPhoneAlt className='text-white' /> {/* Phone Icon */}
-            <a href='tel:+91 8588801711'>+91 8588801711</a>
-          </li>
-          
         </ul>
         <ul className='flex items-center gap-x-5 h-full max-[370px]:text-sm max-[370px]:gap-x-2 font-semibold'>
           {!session ? (
@@ -105,12 +90,12 @@ const HeaderTop = () => {
                         </Link>
                       </li>
                       <li>
-                        <span></span>
                         <button
                           onClick={() => handleLogout()}
                           className='flex items-center text-left px-4 py-2 hover:bg-gray-200'
                         >
-                          <FaArrowRightToBracket className='mr-2' /> Log out
+                          <FaArrowRightToBracket className='mr-2' />
+                          Log out
                         </button>
                       </li>
                     </ul>
@@ -121,6 +106,24 @@ const HeaderTop = () => {
           )}
         </ul>
       </div>
+      <style jsx>{`
+        .scrolling-text {
+          display: inline-block;
+          white-space: nowrap;
+          overflow: hidden;
+          animation: scroll-left 25s linear infinite;
+          max-width: 100%;
+        }
+
+        @keyframes scroll-left {
+          from {
+            transform: translateX(100%);
+          }
+          to {
+            transform: translateX(-100%);
+          }
+        }
+      `}</style>
     </div>
   )
 }

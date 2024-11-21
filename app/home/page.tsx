@@ -12,8 +12,13 @@ import CategoryMenu2 from "@/components/CategoryMenu2";
 import InspiredProducts from "@/components/InspiredProducts";
 import NewProducts from "@/components/NewProducts";
 import OfferBanner from "@/components/OfferBanner";
+import ExtraBanner from "@/components/ExtraBanner";
 import TopSellingProducts from "@/components/TopSellingProducts";
 import React, { useState, useEffect } from "react";
+import News from "@/components/NewsLetterfooter";
+import NewsLetterfooter from "@/components/NewsLetterfooter";
+import BrandSection from "@/components/BrandSection";
+
 
 export default function Home() {
   // const [featureCategory,setFeatureCategoy] = useState("tablets")
@@ -28,15 +33,14 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* <IntroducingSection /> */}
-      {/* <ProductsSection />       */}
-      {/* <Products /> */}
       <TopSellingProducts props={{name:"topselling-products"}} />
+      <BrandSection />
+      
       <OfferBanner />
       <NewProducts props={{name:"new-products"}} />
+      <ExtraBanner/>
       <InspiredProducts props={{name:"inspired-products"}} />
-
-      {/* <CategoryMenu2 /> */}
+      <NewsLetterfooter/>
     </>
   );
 }

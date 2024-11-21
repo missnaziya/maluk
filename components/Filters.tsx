@@ -29,13 +29,14 @@ interface InputCategory {
   const Filters = () => {
   const pathname = usePathname();
   const { replace } = useRouter();
+  const category = pathname.split('/')[2]; 
 
   // getting current page number from Zustand store
   const { page } = usePaginationStore();
 
   const [inputCategory, setInputCategory] = useState<InputCategory>({
     inStock: { text: "instock", isChecked: true },
-    outOfStock: { text: "outofstock", isChecked: true },
+    outOfStock: { text: "outofstock", isChecked: false },
     priceFilter: { text: "price", value: 3000 },
     ratingFilter: { text: "rating", value: 0 },
   });
@@ -59,7 +60,8 @@ interface InputCategory {
   const excludedSlugs = ['inspired-products', 'topselling-products', 'new-products'];
 
   useEffect(() => {
-    fetch(ENDPOINT.BASE_URL + "/api/categories/", { cache: "no-store" })
+    fetch(process.env.NEXT_PUBLIC_BASE_URL + "/api/categories/", { cache: "no-store" })
+    // fetch(ENDPOINT.BASE_URL + "/api/categories/", { cache: "no-store" })
       .then((res) => res.json())
       .then((data) => {
         setCategoryMenuList(data);
@@ -75,7 +77,7 @@ interface InputCategory {
         <h3 className="text-xl mb-2">Category</h3>
         {/* <Link href={`/shop${item.href}`} key={item.id} passHref> */}
     <div className="form-control">
-      <Stack spacing={1}>
+      {/* <Stack spacing={1}>
         {categoryMenuList
            .filter((item:any) => !excludedSlugs.includes(item.name )) // Filter out the excluded slugs
            .map((item:any) => (
@@ -97,53 +99,42 @@ interface InputCategory {
               </Button>
             </Link>
           ))}
+      </Stack> */}
+        <Stack spacing={1}>
+        {categoryMenuList
+          .filter((item:any) => !excludedSlugs.includes(item.name))
+          .map((item : any) => {
+            const isActive = pathname === `/shop${item.href}`; // Check if current path matches
+            return (
+              <Link href={`/shop${item.href}`} key={item.id} passHref>
+                <Button
+                  variant="contained"
+                  className="cursor-pointer"
+                  sx={{
+                    width:"200px",
+                    color: isActive ? 'white' : 'black',
+                    backgroundColor: isActive ? "#f37321 !important" : 'transparent',
+                    borderColor: isActive ? 'black !important' : 'white',
+                    '&:hover': {
+                      color: 'white',
+                      backgroundColor: "#f37321 !important",
+                      borderColor: 'orange !important',
+                    },
+                  }}
+                
+                >
+                  {item.name}
+                </Button>
+              </Link>
+            );
+          })}
       </Stack>
     </div>
-        {/* <div className="form-control">
-          <label className="cursor-pointer flex items-center">
-            <input
-              type="checkbox"
-              checked={inputCategory.inStock.isChecked}
-              onChange={() =>
-                setInputCategory({
-                  ...inputCategory,
-                  inStock: {
-                    text: "instock",
-                    isChecked: !inputCategory.inStock.isChecked,
-                  },
-                })
-              }
-              className="checkbox"
-            />
-            <span className="label-text text-lg ml-2 text-black">In stock</span>
-          </label>
-        </div> */}
-
-        {/* <div className="form-control">
-          <label className="cursor-pointer flex items-center">
-            <input
-              type="checkbox"
-              checked={inputCategory.outOfStock.isChecked}
-              onChange={() =>
-                setInputCategory({
-                  ...inputCategory,
-                  outOfStock: {
-                    text: "outofstock",
-                    isChecked: !inputCategory.outOfStock.isChecked,
-                  },
-                })
-              }
-              className="checkbox"
-            />
-            <span className="label-text text-lg ml-2 text-black">
-              Out of stock
-            </span>
-          </label>
-        </div> */}
+     
       </div>
 
       <div className="divider"></div>
-      <div className="flex flex-col gap-y-1 ">
+      {/* <div className="flex flex-col gap-y-1 ">
         <h3 className="text-xl mb-2">Price</h3>
         <div>
           <input
@@ -193,7 +184,7 @@ interface InputCategory {
           <span>4</span>
           <span>5</span>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

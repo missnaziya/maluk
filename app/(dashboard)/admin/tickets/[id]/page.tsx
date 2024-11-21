@@ -30,7 +30,8 @@ const DashboardSupportTicketPage = ({
     const requestOptions = {
       method: "DELETE",
     };
-    fetch(`${ENDPOINT.BASE_URL}/api/support-ticket/${id}, requestOptions`)
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/support-ticket/${id}, requestOptions`)
+    // fetch(`${ENDPOINT.BASE_URL}/api/support-ticket/${id}, requestOptions`)
       .then((response) => {
         if (response.status === 204) {
           toast.success("Ticket deleted successfully");
@@ -62,7 +63,8 @@ const DashboardSupportTicketPage = ({
         }),
       };
 
-      fetch(`${ENDPOINT.BASE_URL}/api/support-ticket, requestOptions`)
+      fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/support-ticket, requestOptions`)
+      // fetch(`${ENDPOINT.BASE_URL}/api/support-ticket, requestOptions`)
         .then((response) => {
           if (response.status === 201) {
             return response.json();
@@ -82,7 +84,8 @@ const DashboardSupportTicketPage = ({
 
   useEffect(() => {
     // Fetching single ticket details
-    fetch(`${ENDPOINT.BASE_URL}/api/support-ticket/${id}`)
+    fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/support-ticket/${id}`)
+    // fetch(`${ENDPOINT.BASE_URL}/api/support-ticket/${id}`)
       .then((res) => {
         return res.json();
       })
@@ -174,7 +177,7 @@ const DashboardSupportTicketPage = ({
         <div className="flex gap-x-2 max-sm:flex-col">
           <button
             type="button"
-            className="uppercase bg-blue-500 px-10 py-5 text-lg border border-black border-gray-300 font-bold text-white shadow-sm hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2"
+            className="uppercase bg-orange-500 px-10 py-5 text-lg border border-black border-gray-300 font-bold text-white shadow-sm hover:bg-orange-600 hover:text-white focus:outline-none focus:ring-2"
             onClick={addTicket}
           >
             Add Ticket

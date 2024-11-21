@@ -1,45 +1,63 @@
-
-import Image from "next/image";
-import React from "react";
-import Link from "next/link";
-import ProductItemRating from "./ProductItemRating";
+import Image from 'next/image'
+import React from 'react'
+import Link from 'next/link'
+import ProductItemRating from './ProductItemRating'
 
 // MUI Components
-import { Box, Typography, Button, Card, CardContent, CardActions, IconButton, CardMedia } from "@mui/material";
-import { Favorite, ShoppingCart, Visibility } from "@mui/icons-material";
+import {
+  Box,
+  Typography,
+  IconButton,
+  Card,
+  CardContent,
+  CardMedia
+} from '@mui/material'
+import { ShoppingCart } from '@mui/icons-material'
+import AddToWishlistIcon from './AddToWishlistIcon'
 
 const ProductItem = ({
   product,
-  color,
+  color
 }: {
-  product: Product;
-  color: string;
+  product: Product
+  color: string
 }) => {
   return (
     <>
-
-
-
-
-      <Box sx={{ marginTop: 5, borderRadius: 3, marginLeft: 1, marginRight: 1, boxShadow: 2 }}>
-        <Link href={`/product/${product.slug}`} passHref>
-          <Card sx={{ maxWidth: '100%', position: 'relative' }}>
+      <Box
+        sx={{
+          marginTop: 5,
+          borderRadius: 3,
+          marginLeft: 1,
+          marginRight: 1,
+          boxShadow: 2
+        }}
+      >
+        <Card sx={{ maxWidth: '100%', position: 'relative' }}>
+          <Link href={`/product/${product.slug}`} passHref>
             {/* Primary product image */}
             <Box sx={{ position: 'relative' }}>
               <CardMedia
-                component="img"
-                height="300"
-                // image="/WATER TANK ALARM/1.webp"
-                image={product.mainImage ? `/${product.mainImage}` : "/product_placeholder.jpg"}
-                alt="Water Tank Alarm"
+                component='img'
+                height='200' // Reduced height
+                image={
+                  product.mainImage
+                    ? `/${product.mainImage}`
+                    : '/product_placeholder.jpg'
+                }
+                alt='not found'
                 sx={{ objectFit: 'cover' }}
               />
               {/* Hover image */}
               <CardMedia
-                component="img"
-                height="300"
-                image="1.webp"
-                alt="Secondary Image 1"
+                component='img'
+                height='200' // Reduced height for hover image
+                image={
+                  product.alternateImage1
+                    ? `/${product.alternateImage1}`
+                    : '/product_placeholder.jpg'
+                }
+                alt='Secondary Image 1'
                 sx={{
                   position: 'absolute',
                   top: 0,
@@ -50,98 +68,99 @@ const ProductItem = ({
                   opacity: 0,
                   transition: 'opacity 0.3s ease',
                   '&:hover': {
-                    opacity: 1,
-                  },
+                    opacity: 1
+                  }
                 }}
               />
             </Box>
+          </Link>
 
-            {/* Icons overlay */}
-
-            <CardContent
-              sx={{
-                backgroundColor: '#f37321',
-              }}
-            >
-              <Link href={`/product/${product.slug}`} passHref>
-                <Typography
-                  variant="h6"
-                  component="a"
-                  sx={{
-                    textDecoration: 'none',
-                    color: 'black',
-                    textAlign: 'center',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  {product.title}
-                </Typography>
-              </Link>
-
-              {/* Flex container for price and icons */}
-              <Box
+          <CardContent
+            sx={{
+              backgroundColor: '#eee7f2'
+            }}
+          >
+            <Link href={`/product/${product.slug}`} passHref>
+              <Typography
+                variant='body1'
+                component='a'
                 sx={{
-                  display: 'flex',
-                  justifyContent: 'space-between', // Space between price and icons
-                  alignItems: 'center', // Vertically align them
-                  mt: 1, // Margin top for spacing
+                  textDecoration: 'none',
+                  color: 'black',
+                  textAlign: 'center',
+                  fontWeight: 'bold'
                 }}
               >
-                {/* Price Section */}
-                <Box>
-                  <Typography variant="body2" color="textSecondary" component="del" sx={{ marginRight: 2 }}>
-                    ₹{product.price}
-                  </Typography>
-                  <Typography variant="body1" color="textPrimary" component="span">
-                    ₹{product.salePrice}
-                  </Typography>
-                </Box>
+                {product.title}
+              </Typography>
+            </Link>
 
-                {/* Icons Section */}
-                <Box>
-                  <IconButton
-                    aria-label="add to wishlist"
-                    sx={{
-                      backgroundColor: '#f37321',
-                      color: 'black',
-                      borderRadius: '50%',
-                      '&:hover': {
-                        color: 'white',
-                        backgroundColor: 'black',
-                      },
-                      mr: 1, // Margin-right for spacing between icons
-                    }}
-                  >
-                    <Favorite />
-                  </IconButton>
-
-                  <IconButton
-                    aria-label="add to cart"
-                    sx={{
-                      backgroundColor: '#f37321',
-                      color: 'black',
-                      borderRadius: '50%',
-                      '&:hover': {
-                        color: 'white',
-                        backgroundColor: 'black',
-                      },
-                    }}
-                  >
-                    <ShoppingCart />
-                  </IconButton>
-                </Box>
+            {/* Flex container for price and icons */}
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between', // Space between price and icons
+                alignItems: 'center' // Vertically align them
+              }}
+            >
+              {/* Price Section */}
+              <Box>
+                <Typography
+                  variant='body2'
+                  color='textSecondary'
+                  component='del'
+                  sx={{ marginRight: 2 }}
+                >
+                  ₹{product.price}
+                </Typography>
+                <Typography
+                  variant='body1'
+                  color='textPrimary'
+                  component='span'
+                >
+                  ₹{product.salePrice}
+                </Typography>
               </Box>
-            </CardContent>
 
-            {/* Product details */}
-       
-          </Card>
-        </Link>
+              {/* Icons Section */}
+              <Box>
+                <IconButton
+                  aria-label='add to wishlist'
+                  sx={{
+                    backgroundColor: '#f37321',
+                    color: 'black',
+                    borderRadius: '50%',
+                    '&:hover': {
+                      color: 'white',
+                      backgroundColor: 'black'
+                    },
+                    mr: 1 // Margin-right for spacing between icons
+                  }}
+                >
+                  <AddToWishlistIcon product={product} slug={product.slug} />
+                </IconButton>
+
+                <IconButton
+                  aria-label='add to cart'
+                  sx={{
+                    backgroundColor: '#f37321',
+                    color: 'black',
+                    borderRadius: '50%',
+                    '&:hover': {
+                      color: 'white',
+                      backgroundColor: 'black'
+                    }
+                  }}
+                >
+                  <ShoppingCart />
+                </IconButton>
+              </Box>
+            </Box>
+          </CardContent>
+        </Card>
       </Box>
-
     </>
+  )
+}
 
-  );
-};
-
-export default ProductItem;
+export default ProductItem

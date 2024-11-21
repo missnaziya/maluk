@@ -1,55 +1,86 @@
-// *********************
-// Role of the component: Signup to the newsletter component by leaving email adress
-// Name of the component: Newsletter.tsx
-// Developer: Aleksandar Kuzmanovic
-// Version: 1.0
-// Component call: <Newsletter />
-// Input parameters: no input parameters
-// Output: Section with the email input and some text
-// *********************
-
-import React from 'react'
+import React from 'react';
+import { Box, Container, Grid, TextField, Button, Typography } from '@mui/material';
+import CheckIcon from '@mui/icons-material/Check';
 
 const Newsletter = () => {
   return (
-    <div className="bg-white py-5 sm:py-24 lg:py-20">
-    <div className="mx-auto grid justify-items-center max-w-screen-2xl grid-cols-1 gap-10 px-6 lg:grid-cols-12 lg:gap-8 lg:px-8">
-      <div className="max-w-xl text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:col-span-7">
-        <h2 className="inline sm:block lg:inline xl:block max-sm:text-xl">Want product news and updates?</h2>{' '}
-        <p className="inline sm:block lg:inline xl:block max-sm:text-xl">Sign up for our newsletter.</p>
-      </div>
-      <form className="w-full max-w-md lg:col-span-5 lg:pt-2">
-        <div className="flex gap-x-4">
-          <label htmlFor="email-address" className="sr-only">
-            Email address
-          </label>
-          <input
-            id="email-address"
-            name="email"
-            type="email"
-            autoComplete="email"
-            required
-            className="min-w-0 flex-auto rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-            placeholder="Enter your email"
-          />
-          <button
-            type="submit"
-            className="flex-none rounded-md bg-custom-yellow px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-black hover:text-custom-yellow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-          >
-            Subscribe
-          </button>
-        </div>
-        <p className="mt-4 text-sm leading-6 text-gray-900">
-          We care about your data. Read our{' '}
-          <a href="#" className="font-semibold hover:text-custom-yellow text-black">
-            privacy&nbsp;policy
-          </a>
-          .
-        </p>
-      </form>
-    </div>
-  </div>
-  )
-}
+    <Box component="section" sx={{ py: 5, backgroundColor: '#f4f2e4' }}>
+      <Container>
+        <Grid container alignItems="center" spacing={3}>
+          {/* Left Section */}
+          <Grid item xs={12} md={7}>
+            <Box px={5}>
+              <Typography
+                variant="h4"
+                component="h2"
+                sx={{
+                  pb: 2,
+                  color: '#b09614',
+                  fontWeight: 600,
+                  fontFamily: 'Cursive',
+                }}
+              >
+                Subscribe to Our Exclusive Newsletter
+              </Typography>
+              <Box
+                display="flex"
+                flexDirection={{ xs: 'column', md: 'row' }}
+                alignItems={{ xs: 'stretch', md: 'center' }}
+                gap={2}
+                mb={2}
+              >
+                <TextField
+                  type="email"
+                  placeholder="Enter your email address"
+                  fullWidth
+                  required
+                  sx={{ flex: 1 }}
+                />
+                <Button
+                  type="submit"
+                  variant="contained"
+                  sx={{
+                    backgroundColor: '#1976d2',
+                    color: '#fff',
+                    '&:hover': {
+                      backgroundColor: '#1565c0',
+                    },
+                  }}
+                >
+                  Subscribe
+                </Button>
+              </Box>
+              <Box pt={3}>
+                <Box display="flex" alignItems="center" mb={1}>
+                  <CheckIcon sx={{ color: '#4caf50', mr: 1 }} />
+                  <Typography variant="body1">
+                    Discover cutting-edge beauty trends and exclusive tips!
+                  </Typography>
+                </Box>
+                <Box display="flex" alignItems="center">
+                  <CheckIcon sx={{ color: '#4caf50', mr: 1 }} />
+                  <Typography variant="body1">
+                    Gain early access to our newest innovations and deals.
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+          </Grid>
 
-export default Newsletter
+          {/* Right Section */}
+          <Grid item xs={12} md={5}>
+            <Box px={2}>
+              <img
+                src="assets/images/banner/news.png"
+                alt="Newsletter Banner"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </Box>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
+  );
+};
+
+export default Newsletter;

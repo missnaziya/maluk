@@ -21,8 +21,9 @@ const DashboardProductTable = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    console.log("${ENDPOINT.BASE_URL}"+ ENDPOINT.BASE_URL);
-    fetch(ENDPOINT.BASE_URL+"/api/products?mode=admin", {cache: "no-store"})
+    // console.log("${ENDPOINT.BASE_URL}"+ ENDPOINT.BASE_URL);
+    fetch(process.env.NEXT_PUBLIC_BASE_URL+"/api/products?mode=admin", {cache: "no-store"})
+    // fetch(ENDPOINT.BASE_URL+"/api/products?mode=admin", {cache: "no-store"})
       .then((res) => {
         return res.json();
       })
@@ -98,6 +99,7 @@ const DashboardProductTable = () => {
                   </td>
 
                   <td>
+                 
                     { product?.inStock ? (<span className="badge badge-success text-white badge-sm">
                       In stock
                     </span>) : (<span className="badge badge-error text-white badge-sm">

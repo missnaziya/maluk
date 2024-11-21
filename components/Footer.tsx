@@ -1,468 +1,534 @@
-// // *********************
-// // Role of the component: Footer component
-// // Name of the component: Footer.tsx
-// // Developer: Aleksandar Kuzmanovic
-// // Version: 1.0
-// // Component call: <Footer />
-// // Input parameters: no input parameters
-// // Output: Footer component
-// // *********************
-
-// import { navigation } from "@/lib/utils";
-// import Image from "next/image";
-// import React from "react";
+// 'use client'
+// import React, { useState } from 'react'
+// import {
+//   Container,
+//   Grid,
+//   Typography,
+//   Button,
+//   TextField,
+//   Box,
+//   IconButton
+// } from '@mui/material'
+// import {
+//   Facebook,
+//   Twitter,
+//   Instagram,
+//   YouTube,
+//   Pinterest
+// } from '@mui/icons-material'
+// import Link from 'next/link'
+// import Image from 'next/image'
 
 // const Footer = () => {
-//   return (
-//     <footer className="bg-white" aria-labelledby="footer-heading">
-//       <div>
-//         <h2 id="footer-heading" className="sr-only">
-//           Footer
-//         </h2>
-//         <div className="mx-auto max-w-screen-2xl px-6 lg:px-8 pt-24 pb-14">
-//           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-//             <Image
-//               src="/myzk logo.png"
-//               alt="Myzk logo"
-//               width={250}
-//               height={250}
-//               className="h-auto w-auto"
-//             />
-//             <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-//               <div className="md:grid md:grid-cols-2 md:gap-8">
-//                 <div>
-//                   <h3 className="text-lg font-bold leading-6 text-orange-600">
-//                     Sale
-//                   </h3>
-//                   <ul role="list" className="mt-6 space-y-4">
-//                     {navigation.sale.map((item) => (
-//                       <li key={item.name}>
-//                         <Link
-//                           href={item.href}
-//                           className="text-sm leading-6 text-black hover:text-gray-700"
-//                         >
-//                           {item.name}
-//                         </Link>
-//                       </li>
-//                     ))}
-//                   </ul>
-//                 </div>
-//                 <div className="mt-10 md:mt-0">
-//                   <h3 className="text-base font-bold leading-6 text-orange-600">
-//                     About Us
-//                   </h3>
-//                   <ul role="list" className="mt-6 space-y-4">
-//                     {navigation.about.map((item) => (
-//                       <li key={item.name}>
-//                         <Link
-//                           href={item.href}
-//                           className="text-sm leading-6 text-black hover:text-gray-700"
-//                         >
-//                           {item.name}
-//                         </Link>
-//                       </li>
-//                     ))}
-//                   </ul>
-//                 </div>
-//               </div>
-//               <div className="md:grid md:grid-cols-2 md:gap-8">
-//                 <div>
-//                   <h3 className="text-base font-bold leading-6 text-orange-600">
-//                     Buying
-//                   </h3>
-//                   <ul role="list" className="mt-6 space-y-4">
-//                     {navigation.buy.map((item) => (
-//                       <li key={item.name}>
-//                         <Link
-//                           href={item.href}
-//                           className="text-sm leading-6 text-black hover:text-gray-700"
-//                         >
-//                           {item.name}
-//                         </Link>
-//                       </li>
-//                     ))}
-//                   </ul>
-//                 </div>
-//                 <div className="mt-10 md:mt-0">
-//                   <h3 className="text-base font-bold leading-6 text-orange-600">
-//                     Support
-//                   </h3>
-//                   <ul role="list" className="mt-6 space-y-4">
-//                     {navigation.help.map((item) => (
-//                       <li key={item.name}>
-//                         <Link
-//                           href={item.href}
-//                           className="text-sm leading-6 text-black hover:text-gray-700"
-//                         >
-//                           {item.name}
-//                         </Link>
-//                       </li>
-//                     ))}
-//                   </ul>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </footer>
-//   );
-// };
+//   const [email, setEmail] = useState('')
 
-// export default Footer;
-"use client";
-import React, { useState } from "react";
-import {
-  Container,
-  Grid,
-  Typography,
-  Button,
-  TextField,
-  Box,
-  IconButton,
-} from "@mui/material";
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  YouTube,
-  Pinterest,
-} from "@mui/icons-material";
-import Link from "next/link";
+//   const handleSubscribe = () => {
+//     console.log(`Subscribed with: ${email}`)
+//   }
+
+//   return (
+//     <>
+//       <footer>
+//         <Box sx={{ backgroundColor: '#f3edd6', width: '100%', padding: '50px' }}>
+//           <Container maxWidth={false} sx={{ width: '100%', padding: 0 }}>
+//             <Grid container spacing={4}>
+//               {/* Quick Links Section */}
+//               <Grid item xs={12} sm={6} md={3}>
+//                 <Typography
+//                   variant='h6'
+//                   sx={{
+//                     color: '#00000',
+//                     marginBottom: '20px',
+//                     borderBottom: '2px solid #e0e0e0',
+//                     display: 'inline-block' // Ensures the border only spans the text
+//                   }}
+//                 >
+//                   Quick Links
+//                 </Typography>
+//                 <Box component='ul' sx={{ listStyleType: 'none', padding: 0 }}>
+//                   <Box component='li' sx={{ marginBottom: '10px' }}>
+//                     <Link href='/shop' passHref>
+//                       <Typography
+//                         sx={{
+//                           color: '#00000',
+//                           '&:hover': { color: '#f37321' },
+//                           textDecoration: 'none',
+//                           fontSize: '0.875rem'
+//                         }}
+//                       >
+//                         Category
+//                       </Typography>
+//                     </Link>
+//                   </Box>
+//                   <Box component='li' sx={{ marginBottom: '10px' }}>
+//                     <Link href='/policy/privacy-policy' passHref>
+//                       <Typography
+//                         sx={{
+//                           color: '#00000',
+//                           '&:hover': { color: '#f37321' },
+//                           textDecoration: 'none',
+//                           fontSize: '0.875rem'
+//                         }}
+//                       >
+//                         Privacy Policy
+//                       </Typography>
+//                     </Link>
+//                   </Box>
+//                   <Box component='li' sx={{ marginBottom: '10px' }}>
+//                     <Link href='/policy/refund-return' passHref>
+//                       <Typography
+//                         sx={{
+//                           color: '#00000',
+//                           '&:hover': { color: '#f37321' },
+//                           textDecoration: 'none',
+//                           fontSize: '0.875rem'
+//                         }}
+//                       >
+//                         Returns & Refund Policies
+//                       </Typography>
+//                     </Link>
+//                   </Box>
+//                   <Box component='li' sx={{ marginBottom: '10px' }}>
+//                     <Link href='/policy/shipping-delivery' passHref>
+//                       <Typography
+//                         sx={{
+//                           color: '#9a9b9c',
+//                           '&:hover': { color: '#f37321' },
+//                           textDecoration: 'none',
+//                           fontSize: '0.875rem'
+//                         }}
+//                       >
+//                         Shipping and Delivery Policies
+//                       </Typography>
+//                     </Link>
+//                   </Box>
+//                   <Box component='li' sx={{ marginBottom: '10px' }}>
+//                     <Link href='/policy/term-condition' passHref>
+//                       <Typography
+//                         sx={{
+//                           color: '#9a9b9c',
+//                           '&:hover': { color: '#f37321' },
+//                           textDecoration: 'none',
+//                           fontSize: '0.875rem'
+//                         }}
+//                       >
+//                         Terms of Service
+//                       </Typography>
+//                     </Link>
+//                   </Box>
+//                   <Box component='li' sx={{ marginBottom: '10px' }}>
+//                     <Link href='/faq' passHref>
+//                       <Typography
+//                         sx={{
+//                           color: '#9a9b9c',
+//                           '&:hover': { color: '#f37321' },
+//                           textDecoration: 'none',
+//                           fontSize: '0.875rem'
+//                         }}
+//                       >
+//                         Help & FAQ
+//                       </Typography>
+//                     </Link>
+//                   </Box>
+//                 </Box>
+//               </Grid>
+
+//               {/* Support Links Section */}
+//               <Grid item xs={12} sm={6} md={3}>
+//                 <Typography
+//                   variant='h6'
+//                   sx={{
+//                     color: '#ffffff',
+//                     marginBottom: '20px',
+//                     borderBottom: '2px solid #e0e0e0',
+//                     display: 'inline-block' // Ensures the border only spans the text
+//                   }}
+//                 >
+//                   Support Links
+//                 </Typography>
+//                 <Box component='ul' sx={{ listStyleType: 'none', padding: 0 }}>
+//                   <Box component='li' sx={{ marginBottom: '10px' }}>
+//                     <Link href='/support/track-order' passHref>
+//                       <Typography
+//                         sx={{
+//                           color: '#9a9b9c',
+//                           '&:hover': { color: '#f37321' },
+//                           textDecoration: 'none',
+//                           fontSize: '0.875rem'
+//                         }}
+//                       >
+//                         Track Order
+//                       </Typography>
+//                     </Link>
+//                   </Box>
+//                   <Box component='li' sx={{ marginBottom: '10px' }}>
+//                     <Link href='/support/support-ticket' passHref>
+//                       <Typography
+//                         sx={{
+//                           color: '#9a9b9c',
+//                           '&:hover': { color: '#f37321' },
+//                           textDecoration: 'none',
+//                           fontSize: '0.875rem'
+//                         }}
+//                       >
+//                         Ticket Raise
+//                       </Typography>
+//                     </Link>
+//                   </Box>
+//                   <Box component='li' sx={{ marginBottom: '10px' }}>
+//                     <Link href='/return' passHref>
+//                       <Typography
+//                         sx={{
+//                           color: '#9a9b9c',
+//                           '&:hover': { color: '#f37321' },
+//                           textDecoration: 'none',
+//                           fontSize: '0.875rem'
+//                         }}
+//                       >
+//                         Return
+//                       </Typography>
+//                     </Link>
+//                   </Box>
+//                   <Box component='li' sx={{ marginBottom: '10px' }}>
+//                     <Link href='/support/warranty-registration' passHref>
+//                       <Typography
+//                         sx={{
+//                           color: '#9a9b9c',
+//                           '&:hover': { color: '#f37321' },
+//                           textDecoration: 'none',
+//                           fontSize: '0.875rem'
+//                         }}
+//                       >
+//                         Warranty Registration
+//                       </Typography>
+//                     </Link>
+//                   </Box>
+//                   <Box component='li' sx={{ marginBottom: '10px' }}>
+//                     <Link href='/support/contact-us' passHref>
+//                       <Typography
+//                         sx={{
+//                           color: '#9a9b9c',
+//                           '&:hover': { color: '#f37321' },
+//                           textDecoration: 'none',
+//                           fontSize: '0.875rem'
+//                         }}
+//                       >
+//                         Contact
+//                       </Typography>
+//                     </Link>
+//                   </Box>
+//                   {/* <Box component="li" sx={{ marginBottom: "10px" }}>
+//                     <Link href="/about" passHref>
+//                       <Typography
+//                         sx={{
+//                           color: "#9a9b9c",
+//                           "&:hover": { color: "#f37321" },
+//                           textDecoration: "none",
+//                           fontSize: "0.875rem",
+//                         }}
+//                       >
+//                         About
+//                       </Typography>
+//                     </Link>
+//                   </Box> */}
+//                 </Box>
+//               </Grid>
+
+//               {/* Get in Touch Section */}
+//               <Grid item xs={12} sm={6} md={3}>
+//                 <Typography
+//                   variant='h6'
+//                   sx={{
+//                     color: '#ffffff',
+//                     marginBottom: '20px',
+//                     borderBottom: '2px solid #e0e0e0',
+//                     display: 'inline-block' // Ensures the border only spans the text
+//                   }}
+//                 >
+//                   Get In Touch
+//                 </Typography>
+
+//                 <Typography variant='body2' sx={{ color: '#9a9b9c', paddingRight:'10px' }}>
+//                   Have questions? Visit at:
+//                   <Link
+//                     href='https://maps.app.goo.gl/hZgUhCbYwkugGsHx8'
+//                     passHref
+//                   >
+//                     Digital Telemedia Technology Pvt. Ltd., 
+//                     E-169, E Block,
+//                     Sector 63, Noida,
+//                     Uttar Pradesh 201301.
+//                   </Link>
+//                 </Typography>
+//               </Grid>
+
+//               {/* Newsletter Section */}
+//               <Grid item xs={12} sm={6} md={3}>
+//                 <Box
+//                   mt={1}
+//                   sx={{
+//                     boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)', // Light shadow effect
+//                     borderRadius: '8px', // Keep border radius for a smooth look
+//                     overflow: 'hidden' // Ensures rounded corners are applied to iframe
+//                   }}
+//                 >
+//                   <iframe
+//                     src='https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d7004.450094540938!2d77.3867099!3d28.6230165!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x390ce5539e0d42b7%3A0x682b86960f5749cc!2sDigital%20Telemedia%20Technology%20Pvt.%20Ltd.%20E-169%20E%20Block%2C%20Sector%2063%20Noida%2C%20Hazratpur%20Wajidpur%2C%20Uttar%20Pradesh%20201301!3m2!1d28.623015199999998!2d77.3867281!5e0!3m2!1sen!2sin!4v1723628516193!5m2!1sen!2sin'
+//                     width='100%'
+//                     height='auto'
+//                     style={{ border: 0 }}
+//                     loading='lazy'
+//                   ></iframe>
+//                 </Box>
+//               </Grid>
+//             </Grid>
+
+//             {/* Footer Bottom Section */}
+//             <Grid
+//               container
+//               justifyContent='center'
+//               sx={{ marginTop: '30px', paddingTop: '20px', color: 'white' }}
+//             >
+//               <Grid item xs={12} textAlign='center'>
+//                 <Typography variant='body2'>
+//                   Contact us at:{' '}
+//                   <Link
+//                     href='mailto:operations@myzk.in'
+//                     style={{ color: '#9a9b9c', textDecoration: 'none' }}
+//                   >
+//                     operations@myzk.in
+//                   </Link>
+//                 </Typography>
+
+//                 {/* Social Media Icons */}
+//                 <Box sx={{ marginTop: '10px' }}>
+//                   <IconButton href='https://www.facebook.com/profile.php?id=61558117619997' color='inherit'>
+//                     <Facebook />
+//                   </IconButton>
+//                   {/* <IconButton href='#' color='inherit'>
+//                     <Twitter />
+//                   </IconButton> */}
+//                   <IconButton href='https://www.instagram.com/myzk.india/' color='inherit'>
+//                     <Instagram />
+//                   </IconButton>
+//                   <IconButton href='https://youtube.com/@digitaltelemedia?si=FiQuIkBPbpcbhxVI' color='inherit'>
+//                     <YouTube />
+//                   </IconButton>
+//                   <IconButton href='https://pin.it/21nc7Xf1a' color='inherit'>
+//                     <Pinterest />
+//                   </IconButton>
+//                 </Box>
+//               </Grid>
+//             </Grid>
+//           </Container>
+//         </Box>
+
+//         {/* Copyright Section */}
+//         <Grid
+//           container
+//           justifyContent='center'
+//           sx={{ backgroundColor: 'black', padding: '20px 0', width: '100%' }}
+//         >
+//           <Grid item xs={12} textAlign='center'>
+//             <Typography variant='body2' component='div' sx={{color:"#b09614"}}>
+//               Copyright &copy; {new Date().getFullYear()} All rights reserved by{' '}
+//               <Box
+//                 component='span'
+//                 sx={{ display: 'inline-block', verticalAlign: 'middle' }}
+//               >
+//                 <img src='/logo.png' width='50px' alt='Myzk' />
+//               </Box>
+//             </Typography>
+//           </Grid>
+//           {/* <Grid item xs={12} textAlign="center">
+//             <Typography variant="body2">
+//               Copyright &copy; {new Date().getFullYear()} All rights reserved by{" "}
+//               <span>
+//                 <image src="/img/myzklogo.png" width="100px" alt="Myzk" />
+//               </span>
+//             </Typography>
+//           </Grid> */}
+//         </Grid>
+//       </footer>
+//     </>
+//   )
+// }
+
+// export default Footer
+
+
+import React from 'react';
+import { Box, Container, Grid, Typography, Link } from '@mui/material';
+import { LocationOn, Email, Phone } from '@mui/icons-material';
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
-
-  const handleSubscribe = () => {
-    console.log(`Subscribed with: ${email}`);
-  };
-
   return (
     <>
-      <footer>
-        <Box
-          sx={{ backgroundColor: "black", width: "100%", padding: "50px 0" }}
-        >
-          <Container maxWidth={false} sx={{ width: "100%", padding: 0 }}>
-            <Grid container spacing={4}>
-              {/* Quick Links Section */}
-              <Grid item xs={12} sm={6} md={3}>
-                <Typography
-                  variant="h6"
-                  sx={{ color: "#ffffff", marginBottom: "20px" }}
-                >
-                  Quick Links
+    <Box
+      component="footer"
+      sx={{
+        py: 5,
+        background: 'linear-gradient(#f4f2e3, #fdf7e0, #f3edd6, #faf7e0, #faf6da)',
+        color: 'black',
+      }}
+    >
+      <Container maxWidth="xl">
+        <Grid container spacing={5}>
+          {/* Logo and Payment Section */}
+          <Grid item xs={12} md={6} lg={3}>
+            <Box sx={{marginLeft:"20px"}}>
+              <Link href="index.html">
+                <img
+                  src="logo.png"
+                  alt="Maluk Forever Logo"
+                  style={{ width: '40%' }}
+                />
+              </Link>
+              <Typography variant="body1" sx={{ fontStyle: "italic", fontWeight: 'bold' }}>
+                Enhance Your Beauty
+              </Typography>
+              <Box sx={{ mt: 3 }}>
+                <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
+                  Follow Us
                 </Typography>
-                <Box component="ul" sx={{ listStyleType: "none", padding: 0 }}>
-                  <Box component="li" sx={{ marginBottom: "10px" }}>
-                    <Link href="/shop" passHref>
-                      <Typography
-                        sx={{
-                          color: "#9a9b9c",
-                          "&:hover": { color: "#f37321" },
-                          textDecoration: "none",
-                          fontSize: "0.875rem",
-                        }}
-                      >
-                        Category
-                      </Typography>
-                    </Link>
-                  </Box>
-                  <Box component="li" sx={{ marginBottom: "10px" }}>
-                    <Link href="/policy/privacy-policy" passHref>
-                      <Typography
-                        sx={{
-                          color: "#9a9b9c",
-                          "&:hover": { color: "#f37321" },
-                          textDecoration: "none",
-                          fontSize: "0.875rem",
-                        }}
-                      >
-                        Privacy Policy
-                      </Typography>
-                    </Link>
-                  </Box>
-                  <Box component="li" sx={{ marginBottom: "10px" }}>
-                    <Link href="/policy/refund-return" passHref>
-                      <Typography
-                        sx={{
-                          color: "#9a9b9c",
-                          "&:hover": { color: "#f37321" },
-                          textDecoration: "none",
-                          fontSize: "0.875rem",
-                        }}
-                      >
-                        Returns & Refund Policies
-                      </Typography>
-                    </Link>
-                  </Box>
-                  <Box component="li" sx={{ marginBottom: "10px" }}>
-                    <Link href="/policy/shipping-delivery" passHref>
-                      <Typography
-                        sx={{
-                          color: "#9a9b9c",
-                          "&:hover": { color: "#f37321" },
-                          textDecoration: "none",
-                          fontSize: "0.875rem",
-                        }}
-                      >
-                        Shipping and Delivery Policies
-                      </Typography>
-                    </Link>
-                  </Box>
-                  <Box component="li" sx={{ marginBottom: "10px" }}>
-                    <Link href="/policy/term-condition" passHref>
-                      <Typography
-                        sx={{
-                          color: "#9a9b9c",
-                          "&:hover": { color: "#f37321" },
-                          textDecoration: "none",
-                          fontSize: "0.875rem",
-                        }}
-                      >
-                        Terms of Service
-                      </Typography>
-                    </Link>
-                  </Box>
-                  <Box component="li" sx={{ marginBottom: "10px" }}>
-                    <Link href="/faq" passHref>
-                      <Typography
-                        sx={{
-                          color: "#9a9b9c",
-                          "&:hover": { color: "#f37321" },
-                          textDecoration: "none",
-                          fontSize: "0.875rem",
-                        }}
-                      >
-                        Help & FAQ
-                      </Typography>
-                    </Link>
-                  </Box>
-                </Box>
-              </Grid>
-
-              {/* Support Links Section */}
-              <Grid item xs={12} sm={6} md={3}>
-                <Typography
-                  variant="h6"
-                  sx={{ color: "#ffffff", marginBottom: "20px" }}
-                >
-                  Support Links
-                </Typography>
-                <Box component="ul" sx={{ listStyleType: "none", padding: 0 }}>
-                  <Box component="li" sx={{ marginBottom: "10px" }}>
-                    <Link href="/tracking" passHref>
-                      <Typography
-                        sx={{
-                          color: "#9a9b9c",
-                          "&:hover": { color: "#f37321" },
-                          textDecoration: "none",
-                          fontSize: "0.875rem",
-                        }}
-                      >
-                        Track Order
-                      </Typography>
-                    </Link>
-                  </Box>
-                  <Box component="li" sx={{ marginBottom: "10px" }}>
-                    <Link href="/ticket" passHref>
-                      <Typography
-                        sx={{
-                          color: "#9a9b9c",
-                          "&:hover": { color: "#f37321" },
-                          textDecoration: "none",
-                          fontSize: "0.875rem",
-                        }}
-                      >
-                        Ticket Raise
-                      </Typography>
-                    </Link>
-                  </Box>
-                  <Box component="li" sx={{ marginBottom: "10px" }}>
-                    <Link href="/return" passHref>
-                      <Typography
-                        sx={{
-                          color: "#9a9b9c",
-                          "&:hover": { color: "#f37321" },
-                          textDecoration: "none",
-                          fontSize: "0.875rem",
-                        }}
-                      >
-                        Return
-                      </Typography>
-                    </Link>
-                  </Box>
-                  <Box component="li" sx={{ marginBottom: "10px" }}>
-                    <Link href="/support/warranty-registration" passHref>
-                      <Typography
-                        sx={{
-                          color: "#9a9b9c",
-                          "&:hover": { color: "#f37321" },
-                          textDecoration: "none",
-                          fontSize: "0.875rem",
-                        }}
-                      >
-                        Warranty Registration
-                      </Typography>
-                    </Link>
-                  </Box>
-                  <Box component="li" sx={{ marginBottom: "10px" }}>
-                    <Link href="/support/contact-us" passHref>
-                      <Typography
-                        sx={{
-                          color: "#9a9b9c",
-                          "&:hover": { color: "#f37321" },
-                          textDecoration: "none",
-                          fontSize: "0.875rem",
-                        }}
-                      >
-                        Contact
-                      </Typography>
-                    </Link>
-                  </Box>
-                  {/* <Box component="li" sx={{ marginBottom: "10px" }}>
-                    <Link href="/about" passHref>
-                      <Typography
-                        sx={{
-                          color: "#9a9b9c",
-                          "&:hover": { color: "#f37321" },
-                          textDecoration: "none",
-                          fontSize: "0.875rem",
-                        }}
-                      >
-                        About
-                      </Typography>
-                    </Link>
-                  </Box> */}
-                </Box>
-              </Grid>
-
-              {/* Get in Touch Section */}
-              <Grid item xs={12} sm={6} md={3}>
-                <Typography
-                  variant="h6"
-                  sx={{ color: "#ffffff", marginBottom: "20px" }}
-                >
-                  Get In Touch
-                </Typography>
-                <Typography variant="body2" sx={{ color: "#9a9b9c" }}>
-                  Have questions? Visit at:
-                  <Link
-                    href="https://maps.app.goo.gl/hZgUhCbYwkugGsHx8"
-                    passHref
-                  >
-                    Digital Telemedia Technology Pvt. Ltd., E-169, E Block,
-                    Sector 63, Noida, Uttar Pradesh 201301.
+                <Box display="flex" gap={1}>
+                  <Link href="https://pin.it/28GVwGnI3" target="_blank">
+                    <img src="/social/pinterest.png" width="27" alt="Pinterest" />
                   </Link>
-                </Typography>
-              </Grid>
-
-              {/* Newsletter Section */}
-              <Grid item xs={12} sm={6} md={3}>
-                <Typography
-                  variant="h6"
-                  sx={{ color: "#ffffff", marginBottom: "20px" }}
-                >
-                  Newsletter
-                </Typography>
-                <Box>
-                  <TextField
-                    fullWidth
-                    variant="outlined"
-                    placeholder="email@example.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    sx={{
-                      backgroundColor: "#9a9b9c",
-                      color: "#fff",
-                      "::placeholder": { color: "white" },
-                    }}
-                  />
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleSubscribe}
-                    fullWidth
-                    sx={{
-                      marginTop: "10px",
-                      backgroundColor: "#f37321",
-                      color: "white",
-                    }}
-                  >
-                    Subscribe
-                  </Button>
-                </Box>
-              </Grid>
-            </Grid>
-
-            {/* Footer Bottom Section */}
-            <Grid
-              container
-              justifyContent="center"
-              sx={{ marginTop: "30px", paddingTop: "20px", color: "white" }}
-            >
-              <Grid item xs={12} textAlign="center">
-                <Typography variant="body2">
-                  Contact us at:{" "}
-                  <Link
-                    href="mailto:operations@myzk.in"
-                    style={{ color: "#9a9b9c", textDecoration: "none" }}
-                  >
-                    operations@myzk.in
+                  <Link href="https://www.linkedin.com/in/maluk-forever-900818339/" target="_blank">
+                    <img src="/social/linkedin.png" width="28" alt="LinkedIn" />
                   </Link>
-                </Typography>
-
-                {/* Social Media Icons */}
-                <Box sx={{ marginTop: "10px" }}>
-                  <IconButton href="#" color="inherit">
-                    <Facebook />
-                  </IconButton>
-                  <IconButton href="#" color="inherit">
-                    <Twitter />
-                  </IconButton>
-                  <IconButton href="#" color="inherit">
-                    <Instagram />
-                  </IconButton>
-                  <IconButton href="#" color="inherit">
-                    <YouTube />
-                  </IconButton>
-                  <IconButton href="#" color="inherit">
-                    <Pinterest />
-                  </IconButton>
+                  <Link href="https://www.youtube.com/@maluk.forever" target="_blank">
+                    <img src="/social/youtube.png" width="28" alt="YouTube" />
+                  </Link>
+                  <Link href="https://x.com/malukforever" target="_blank">
+                    <img src="/social/twitter.png" width="28" alt="Twitter" />
+                  </Link>
+                  <Link
+                    href="https://www.instagram.com/maluk.forever/?igsh=bDJtdW80aWVlYjFr#"
+                    target="_blank"
+                  >
+                    <img src="/social/insta.png" width="31" alt="Instagram" />
+                  </Link>
                 </Box>
-              </Grid>
-            </Grid>
-          </Container>
-        </Box>
+              </Box>
+            </Box>
+          </Grid>
 
-        {/* Copyright Section */}
-        <Grid
+          {/* Quick Links Section */}
+          <Grid item xs={12} md={6} lg={2}>
+            <Box>
+              <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
+                Quick Links
+              </Typography>
+              <Box component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
+                {[
+                  { name: 'Home', link: 'index.html' },
+                  { name: 'About Us', link: 'about.html' },
+                  { name: 'Blogs', link: 'blog.html' },
+                  { name: 'Category', link: 'shop.html' },
+                  { name: 'Gallery', link: 'gallery.html' },
+                  { name: 'Contact Us', link: 'contact.html' },
+                  { name: "FAQ's", link: 'faq.html' },
+                ].map((item) => (
+                  <Box component="li" key={item.name} >
+                    <Link href={item.link} sx={{  textDecoration: 'none' , color:"black"}}>
+                      {item.name}
+                    </Link>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+          </Grid>
+
+          {/* Useful Links Section */}
+          <Grid item xs={12} md={6} lg={3}>
+            <Box>
+              <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
+                Useful Links
+              </Typography>
+              <Box component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
+                {[
+                  { name: 'Our Policy', link: 'ourprivacy.html' },
+                  { name: 'Terms And Conditions', link: 'termsandconditions.html' },
+                  { name: 'How We Make', link: 'wemake.html' },
+                  { name: 'Fan Page', link: 'fanpage.html' },
+                  { name: 'Media', link: 'media.html' },
+                  { name: 'Become an Affiliate', link: 'affiliate.html' },
+                  { name: 'Feedback Form', link: 'feedback.html' },
+                  { name: 'Track Order', link: 'trackingpage.html' },
+                ].map((item) => (
+                  <Box component="li" key={item.name} sx={{  }}>
+                    <Link href={item.link} sx={{ color:"black", textDecoration: 'none' }}>
+                      {item.name}
+                    </Link>
+                  </Box>
+                ))}
+              </Box>
+            </Box>
+          </Grid>
+
+          {/* Contact Information Section */}
+          <Grid item xs={12} md={6} lg={4}>
+            <Box sx={{marginRight:"20px"}}>
+              <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
+                Contact Us
+              </Typography>
+              <Box component="address" sx={{ fontStyle: 'normal' }}>
+                <Box display="flex" alignItems="center" sx={{ mb: 2 }}>
+                  <LocationOn sx={{ mr: 1 }} />
+                  <Link
+                    href="https://maps.app.goo.gl/xsiUC3c2nagspFnn7"
+                    sx={{ textDecoration: 'none', color: 'inherit',  }}
+                  >
+                    E-169, Lower Ground Part 1, Sector 63, Noida, Uttar Pradesh, India, 201301
+                  </Link>
+                </Box>
+                <Box display="flex" alignItems="center" sx={{ mb: 2 }}>
+                  <Email sx={{ mr: 1 }} />
+                  <Link
+                    href="mailto:operations@malukforever.com"
+                    sx={{ textDecoration: 'none', color: 'inherit',  }}
+                  >
+                    operations@malukforever.com
+                  </Link>
+                </Box>
+                <Box display="flex" alignItems="center">
+                  <Phone sx={{ mr: 1 }} />
+                  <Link
+                    href="tel:+918588801711"
+                    sx={{ textDecoration: 'none', color: 'inherit',  }}
+                  >
+                    +91 85888 01711
+                  </Link>
+                </Box>
+              </Box>
+            </Box>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
+             {/* Copyright Section */}
+       <Grid
           container
-          justifyContent="center"
-          sx={{ backgroundColor: "white", padding: "20px 0", width: "100%" }}
+          justifyContent='center'
+          sx={{ backgroundColor: 'black', padding: '10px 0', width: '100%' }}
         >
-          <Grid item xs={12} textAlign="center">
-            <Typography variant="body2" component="div">
-              Copyright &copy; {new Date().getFullYear()} All rights reserved by{" "}
+          <Grid item xs={12} textAlign='center'>
+            <Typography variant='body2' component='div' sx={{color:"#b09614"}}>
+              Copyright &copy; {new Date().getFullYear()} All rights reserved by{' '}
               <Box
-                component="span"
-                sx={{ display: "inline-block", verticalAlign: "middle" }}
+                component='span'
+                sx={{ display: 'inline-block', verticalAlign: 'middle' }}
               >
-                <img src="/img/myzk logo.png" width="100px" alt="Myzk" />
+                <img src='/logo.png' width='50px' alt='Myzk' />
               </Box>
             </Typography>
           </Grid>
-          {/* <Grid item xs={12} textAlign="center">
-            <Typography variant="body2">
-              Copyright &copy; {new Date().getFullYear()} All rights reserved by{" "}
-              <span>
-                <img src="/img/myzklogo.png" width="100px" alt="Myzk" />
-              </span>
-            </Typography>
-          </Grid> */}
+
         </Grid>
-      </footer>
     </>
+
   );
 };
 
