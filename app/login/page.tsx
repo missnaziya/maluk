@@ -2,6 +2,16 @@
 import { CustomButton, SectionTitle } from "@/components";
 import ENDPOINT from "@/config/appConfig";
 import { isValidEmailAddressFormat } from "@/lib/utils";
+import {
+  Box,
+  Button,
+  Container,
+  Divider,
+  Grid,
+  InputAdornment,
+  TextField,
+  Typography,
+} from "@mui/material";
 import axios from "axios";
 import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
@@ -96,14 +106,16 @@ const LoginPage = () => {
   return (
     <div className="bg-white">
       <SectionTitle title="Login" path="Home | Login" />
-      <div className="flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8 bg-white">
-        <div className="sm:mx-auto sm:w-full sm:max-w-md">
+      <div 
+      // className="flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8 bg-white"
+      >
+        {/* <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <h2 className="mt-6 text-center text-2xl font-normal leading-9 tracking-tight text-gray-900">
             Sign in to your account
           </h2>
-        </div>
+        </div> */}
 
-        <div className="mt-5 sm:mx-auto sm:w-full sm:max-w-[480px]">
+        {/* <div className="mt-5 sm:mx-auto sm:w-full sm:max-w-[480px]">
           <div className="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
         {  !showForgot? 
          <form className="space-y-6" onSubmit={handleSubmit}>
@@ -261,26 +273,109 @@ const LoginPage = () => {
                 </div>
               </div>
 
-              {/* <div className="mt-6 grid grid-cols-1 gap-4 d-none">
-                <button
-                  className="flex w-full items-center border border-gray-300 justify-center gap-3 rounded-md bg-white px-3 py-1.5 text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                  onClick={() => {
-                    signIn("google");
-                  }}
-                >
-                  <FcGoogle />
-                  <span className="text-sm font-semibold leading-6">
-                    Google
-                  </span>
-                </button>
-
-              </div> */}
+             
               <p className="text-red-600 text-center text-[16px] my-4">
                 {error && error}
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
+
+
+<Box className="login-section" sx={{ backgroundColor: "#f9f9f9", minHeight: "80vh", display: "flex", alignItems: "center" }}>
+      <Box className="login-cont" sx={{ maxWidth: "800px", margin: "auto", backgroundColor: "white", boxShadow: 2, borderRadius: 2 }}>
+        <Box className="row" sx={{ display: "flex", flexWrap: "wrap" }}>
+          {/* Left Section */}
+          <Box
+            className="col-md-6"
+            sx={{
+              flex: "1 1 50%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: 5,
+              borderRight: { xs: 0, md: "1px solid #f9f9f9" },
+            }}
+          >
+            <Box textAlign="center">
+              <img src="/logo.png" alt="Logo" style={{ width: "200px", borderRadius: "10px", margin:"auto" }} />
+              <Typography sx={{ color: "#b09615", fontWeight: "bold", marginTop: 2 }}>Welcome back!</Typography>
+              <Typography>Please log in to your account to continue. If you don't have an account, you can sign up.</Typography>
+            </Box>
+          </Box>
+
+          {/* Right Section */}
+          <Box className="col-md-6" sx={{ flex: "1 1 50%", padding: 4 }}>
+            <Box>
+              {showForgot ? (
+                <form onSubmit={handleForgotPassword}>
+                  <Typography variant="h6" mb={2}>
+                    Forgot Password
+                  </Typography>
+                  <TextField fullWidth name="email" label="Email Address" margin="normal" required />
+                  <TextField fullWidth name="new_password" label="New Password" type="password" margin="normal" required />
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    sx={{ backgroundColor: "#b09615 !important", color: "white", mt: 2, "&:hover": { backgroundColor: "#998410" } }}
+                    fullWidth
+                  >
+                    Update
+                  </Button>
+                  <Typography mt={2} textAlign="center">
+                    <Link
+                    href=""
+                      onClick={() => setShowForgot(false)}
+                      // sx={{ cursor: "pointer", color: "#b09615", textDecoration: "none" }}
+                    >
+                      Go Back
+                    </Link>
+                  </Typography>
+                </form>
+              ) : (
+                <form onSubmit={handleSubmit}>
+                  {/* <Typography variant="h6" mb={2}>
+                    Sign in to your account
+                  </Typography> */}
+                  <TextField fullWidth name="email" label="Email Address" margin="normal" required  />
+                  <TextField fullWidth name="password" label="Password" type="password" margin="normal" required />
+                  <Box display="flex" justifyContent="space-between" alignItems="center" mt={2}>
+                    <Box display="flex" alignItems="center">
+                      <input type="checkbox" id="remember-me" name="remember-me" style={{ marginRight: "8px",  }} />
+                      <label htmlFor="remember-me" style={{ fontSize: "14px" }}>
+                        Remember me
+                      </label>
+                    </Box>
+                    <Link
+                    href=""
+                      onClick={() => setShowForgot(true)}
+                      // sx={{ cursor: "pointer", color: "#b09615", textDecoration: "none", fontSize: "14px" }}
+                    >
+                      Forgot Password?
+                    </Link>
+                  </Box>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    sx={{ backgroundColor: "#b09615 !important", color: "white", mt: 2,padding:2, fontWeight:"bold", "&:hover": { backgroundColor: "#998410" } }}
+                    fullWidth
+                  >
+                    Log In
+                  </Button>
+                </form>
+              )}
+              <Divider sx={{ my: 3 }} />
+              <Typography textAlign="center">
+                Don't have an account?{" "}
+                <Link href="/register" >
+                  Sign Up
+                </Link>
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
       </div>
     </div>
   );

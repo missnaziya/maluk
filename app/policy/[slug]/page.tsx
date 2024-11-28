@@ -31,13 +31,13 @@ export default function PolicyPage({ params }: PolicyPageProps) {
   };
 
   return (
-    <Box sx={{ padding: '20px' }}>
-      <Box sx={{ marginBottom: '20px' }}>
+    <>
+      <Box >
         {renderPolicyComponent(slug)}
       </Box>
       <Box mt={4}>
         <Link href="/">Back to Home</Link>
       </Box>
-    </Box>
+    </>
   );
 }

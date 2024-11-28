@@ -1,183 +1,143 @@
-// pages/privacy-policy.js
-import React from 'react';
-import { Container, Typography, Box, Link } from '@mui/material';
+import React from "react";
+import { Box, Container, Typography, List, ListItem, Link } from "@mui/material";
+import SectionTitle from "./SectionTitle";
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy: React.FC = () => {
   return (
-    <Container maxWidth="lg" sx={{ paddingY: 5 }}>
-      <Box className="policy" sx={{ padding: 3, borderRadius: 2, boxShadow: 2, background: '#fff' }}>
-   
-
-        <Typography variant="h4" sx={{ color: 'hsl(23.43deg 89.74% 54.12%)', marginBottom: 2 }}>
-        Privacy Policy
-      </Typography>
-        
-        <Typography paragraph>
-          <strong>We consider the privacy of our customers the most important.</strong> We are in the business of
-          serving you, not selling your information. Your name, address information, and credit card information are
-          collected only to fulfill your order.
-        </Typography>
-        
-        <Typography paragraph>
-          Information security is critical to our business. We use advanced security technology to prevent our
-          computers from being accessed by unauthorized persons. We do not distribute customer information to be used
-          in mailing lists, surveys, or any other purpose other than what is required to perform our services.
-          Shopping with us is 100% safe!!
+    <>
+    <Box
+      component="section"
+      sx={{
+        maxWidth: "1000px",
+        margin: "20px auto",
+        padding: "40px",
+        backgroundColor: "#fff",
+        borderRadius: "8px",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+      }}
+    >
+      <SectionTitle title="Terms and Conditions" path="Home | Terms and Conditions" />
+      <Container>
+        <Typography variant="body1" sx={{ marginBottom: "20px", color: "#333" }}>
+          Welcome to Maluk Forever! By using our website, making a purchase, or engaging with our services, you agree to
+          comply with and be bound by the following terms and conditions. Please read these carefully.
         </Typography>
 
-        <Typography paragraph>
-          MYZK value your privacy and adhere strictly to good privacy practices to
-          ensure that your privacy is respected and personal information you provide to us is kept in accordance with
-          applicable laws and the policies and practices as described in this Privacy Policy.
+        <Typography variant="h3" sx={headingStyle}>
+          Privacy and Data Protection
+        </Typography>
+        <Typography sx={paragraphStyle}>
+          We respect your privacy and are committed to protecting your personal information. For more details on how we
+          collect, use, and protect your data, please review our Privacy Policy.
         </Typography>
 
-        <Typography paragraph>
-          Our privacy policy discloses our privacy practices for handling online personal and non-personal information.
-          Please read this Privacy Policy carefully before you use any of MYZK websites (Site(s)) and/or MYZK
-          PC/mobile applications (Application(s)). By using or accessing the Sites and/or Application(s), you are
-          accepting this Privacy Policy. We reserve the right to change our Privacy Policy and our Terms of Use at any
-          time and from time to time, without any notice to you. We encourage you to refer to this Privacy Policy on
-          an ongoing basis so that you are aware of the current terms.
+        <Typography variant="h3" sx={headingStyle}>
+          Intellectual Property
+        </Typography>
+        <Typography sx={paragraphStyle}>
+          All content on the Maluk Forever website, including text, images, logos, and trademarks, is the property of
+          Maluk Forever or its affiliates and is protected by copyright laws. You may not use, reproduce, or distribute
+          any content without permission from Maluk Forever.
         </Typography>
 
-        <Typography variant="h6" sx={{ marginTop: 2 }}>What Information Do We Collect?</Typography>
-
-        <Typography variant="h6" sx={{ marginTop: 2 }}>Non-sensitive/personal Information</Typography>
-        <Typography paragraph>
-          As a visitor to our Sites, you can engage in many activities without providing any personal information.
-          However, we do collect and aggregate information pertaining to the web pages visited and general usage
-          patterns through the use of cookies as described below. Such information is not linked to any sensitive
-          information. The non-sensitive information we collect helps us identify the most popular areas of our Sites
-          and determines the effectiveness of our promotional activities.
+        <Typography variant="h3" sx={headingStyle}>
+          User Conduct
+        </Typography>
+        <Typography sx={paragraphStyle}>When using the website, you agree not to:</Typography>
+        <List sx={{ paddingLeft: "20px", color: "#333" }}>
+          <ListItem>Engage in any fraudulent activity</ListItem>
+          <ListItem>Post or transmit harmful, offensive, or unlawful content</ListItem>
+          <ListItem>Disrupt or interfere with the website’s functionality</ListItem>
+        </List>
+        <Typography sx={paragraphStyle}>
+          We reserve the right to suspend or terminate your access to the site if we believe you have violated these
+          terms.
         </Typography>
 
-        <Typography paragraph>
-          When you download and use our Application(s), some information is provided automatically by your use of the
-          Application(s), including any errors encountered, functions/features used, device type, navigation flow,
-          operating system, and usage time for each application screen. Such information is technical, not linked to
-          any sensitive/personal information, and is collected to help us better understand how users engage with our
-          Application(s), improve user experience, adapt or develop new features according to users preferences, and
-          determine the effectiveness of our Application(s). Our Application(s) use Google Analytics, which is a web
-          analytics service provided by Google.
+        <Typography variant="h3" sx={headingStyle}>
+          Limitation of Liability
+        </Typography>
+        <Typography sx={paragraphStyle}>
+          Maluk Forever is not liable for any direct, indirect, incidental, or consequential damages resulting from your
+          use or inability to use the website or products. This includes any loss of data, profit, or damage to your
+          device or skin due to the use of our products.
         </Typography>
 
-        <Typography variant="h6" sx={{ marginTop: 2 }}>Sensitive/Personal Information</Typography>
-        <Typography paragraph>
-          You may have the opportunity to participate in various activities at MYZK Sites or on MYZK social media
-          sites, including but not limited to: product registration, special offers, promotions, participation in
-          surveys/polls/contests, software downloads, online shopping, newsletter subscription, and/or forum
-          participation. These activities may require the collection of your personal information, including: your
-          name, postal address, e-mail address, telephone number, fax number, credit card details (only for payment
-          obligations to complete your order(s), where required), and/or information about your interests in the use
-          of MYZK various products, programs, and services. Such data collected may be combined with the information
-          you had previously provided (for example, if you had previously registered the ownership of your MYZK
-          products). MYZK is committed to safeguarding your personal information and will only use such information to
-          better understand your needs and to provide you with better service.
+        <Typography variant="h3" sx={headingStyle}>
+          Disclaimer
+        </Typography>
+        <Typography sx={paragraphStyle}>
+          While we strive to provide accurate and effective products, individual results may vary. Please follow the
+          product instructions carefully, and discontinue use if irritation occurs. Maluk Forever is not responsible for
+          any adverse reactions or damages caused by misuse of our products.
         </Typography>
 
-        <Typography paragraph>
-          To prevent unauthorized access to our database and to ensure the appropriate use of information, we have put
-          in place electronic and managerial procedures to safeguard sensitive information. We use Secure Sockets
-          Layer (SSL) encryption on web pages where personal information is required.
+        <Typography variant="h3" sx={headingStyle}>
+          Changes to Terms
+        </Typography>
+        <Typography sx={paragraphStyle}>
+          We reserve the right to update or modify these Terms and Conditions at any time. Any changes will be posted
+          on this page with the updated date. By continuing to use our website after such changes, you agree to be bound
+          by the revised terms.
         </Typography>
 
-        <Typography variant="h6" sx={{ marginTop: 2 }}>How We May Use The Information</Typography>
-        <Typography paragraph>
-          MYZK will not sell, rent, loan, or lease your personal information to others unless we have your express
-          permission or are otherwise required by law or related regulations to do so. MYZK will not use or share the
-          personally identifiable information that you provide to us online in ways unrelated to those described
-          herein, without (i) first letting you know and (ii) offering you a choice to opt out. If you have any
-          problems exercising your choice to opt out, please contact us at <Link href="http://www.MYZK.IN/contact">MYZK Contact</Link>. We may use your personal information to enable us to keep you updated on our latest
-          products, offerings, promotions, software updates, improve our targeted advertising, content, and services,
-          and to generally improve our communications and personalize your user experience. (Please note that if you
-          decide to opt out, we may be unable to provide you with certain services and support, as applicable.) We may
-          also use your personal information for our internal purposes - which may include but are not limited to data
-          research, analytics, or general audit purposes. MYZK may process personal information on servers in various
-          countries around the world. We may process your personal information on a server located outside the country
-          where you live.
+        <Typography variant="h3" sx={headingStyle}>
+          Governing Law
+        </Typography>
+        <Typography sx={paragraphStyle}>
+          These Terms and Conditions are governed by and construed in accordance with the laws of the jurisdiction in
+          which Maluk Forever operates.
         </Typography>
 
-        <Typography variant="h6" sx={{ marginTop: 2 }}>Cookies</Typography>
-        <Typography paragraph>
-          Cookies are small text files that a web server can store on a user device/machine. Cookies allow a website
-          to store information on a user machine and retrieve it later. Cookies collect information like IP
-          addresses, operating systems, and browser software, but they do not collect any personal information.
-          Cookies enable us to customize your experience and provide greater convenience at our Sites. You have the
-          ability to accept or decline cookies by modifying the settings on your browser; you may wish to refer to the
-          instructions for your file management software to locate the file or directory that stores cookies for
-          better management of your cookie settings.
+        <Typography variant="h3" sx={headingStyle}>
+          Contact Us
         </Typography>
-
-        <Typography paragraph>
-          You may refuse the use of cookies by selecting the appropriate settings on your browser. However, please note
-          that if you do this, you may not be able to use the full functionality of our Sites.
+        <Typography sx={paragraphStyle}>
+          If you have any questions about these Terms and Conditions or any aspect of your order, please contact us at:
         </Typography>
-
-        <Typography variant="h6" sx={{ marginTop: 2 }}>Third-Party Vendors/Marketing Agents</Typography>
-        <Typography paragraph>
-          We engage third-party vendors/marketing agents (including Google, Inc. for online advertising,
-          marketing, and/or remarketing services for the purpose of remarketing, interest-based advertising, age,
-          gender, demographic, or location targeting, etc., to better target and serve more relevant ads to our
-          intended audience based on available data. Third-party vendors/marketing agents, including Google, may show
-          our advertisements on Sites across the Internet. For more information on how Google uses data when you use
-          our Sites/Applications, please refer to: <Link href="https://www.google.com/policies/privacy/partners/">Google Privacy & Terms</Link> (as may be amended by Google from time to time).
+        <Typography sx={paragraphStyle}>
+          Email:{" "}
+          <Link href="mailto:operations@malukforever.com" sx={linkStyle}>
+            operations@malukforever.com
+          </Link>
         </Typography>
-
-        <Typography paragraph>
-          For Sites, as part of our advertising and marketing activities, data analysis, and other activities, we have
-          implemented or may implement Google Display Advertising features such as Remarketing, Google Display
-          Network Impression Reporting, DoubleClick Campaign Manager Integration, or Google Analytics Demographics and
-          Interest Reporting. You may opt out of Google Analytics for Display Advertising and customize Google Display
-          Network ads at: <Link href="https://www.google.com/settings/ads">Google Ads Settings</Link>. We and our
-          third-party vendors/marketing agents (including but not limited to Google) use first-party cookies (such as
-          the Google Analytics cookie) and third-party cookies (such as the DoubleClick cookie) together to inform,
-          optimize, and serve ads based on someone past visits to our website. (Please refer to the section on Web
-          Analytics/Statistics below for more information.)
+        <Typography sx={paragraphStyle}>
+          Phone: +91 85888 01711
         </Typography>
-
-        <Typography variant="h6" sx={{ marginTop: 2 }}>Personally Identifiable Information</Typography>
-        <Typography paragraph>
-          We do not allow or use or associate personally identifiable information with remarketing lists. We will not
-          give personal information about you to third parties without your consent, except as required by law or as
-          stated in this Privacy Policy.
+        <Typography sx={paragraphStyle}>
+          Address: E-169 Lower Ground Part 1, Sector 63, G B Nagar, Noida, Uttar Pradesh, 201301
         </Typography>
-
-        <Typography variant="h6" sx={{ marginTop: 2 }}>Web Analytics/Statistics</Typography>
-        <Typography paragraph>
-          We use third-party web analytics services (such as Google Analytics) to collect and analyze information
-          about our Sites and user interactions with our Sites. Web analytics services collect information about website
-          usage and may record user interactions with our Sites, including but not limited to pages visited, time on
-          page, and other interactions. The information collected will be used for statistical analysis and will help
-          us improve our websites and services. We do not share any personal information with our web analytics
-          services.
-        </Typography>
-
-        <Typography variant="h6" sx={{ marginTop: 2 }}>Childrens Online Privacy Protection Act Compliance</Typography>
-        <Typography paragraph>
-          We comply with the Childrens Online Privacy Protection Act (COPPA) and will not knowingly collect
-          personally identifiable information from children under the age of 13. If you are a parent or guardian and
-          believe that your child has provided us with personal information, please contact us.
-        </Typography>
-
-        <Typography variant="h6" sx={{ marginTop: 2 }}>Your Consent</Typography>
-        <Typography paragraph>
-          By using this website, you consent to our privacy policy.
-        </Typography>
-
-        <Typography variant="h6" sx={{ marginTop: 2 }}>Changes to Our Privacy Policy</Typography>
-        <Typography paragraph>
-          We may update this Privacy Policy from time to time. If we make changes, we will notify you by posting the
-          new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.
-        </Typography>
-
-        <Typography variant="h6" sx={{ marginTop: 2 }}>Contact Us</Typography>
-        <Typography paragraph>
-          If you have any questions or concerns about our Privacy Policy, please contact us:
-          <Link href="http://www.MYZK.IN/contact"> MYZK Contact</Link>.
-        </Typography>
-      </Box>
-    </Container>
+      </Container>
+    </Box>
+    </>
   );
+};
+
+// Styling using the sx prop
+const headingStyle = {
+  color: "#b09614",
+  marginTop: "15px",
+  fontSize: "1.3rem",
+  fontWeight: "bold",
+  borderLeft: "10px solid #f4f2e4",
+  borderRight: "3px solid #f4f2e4",
+  borderBottomLeftRadius: "23px",
+  paddingLeft: "10px",
+};
+
+const paragraphStyle = {
+  fontSize: "1rem",
+  lineHeight: "1.6",
+  color: "#333",
+  marginBottom: "15px",
+};
+
+const linkStyle = {
+  color: "#b09614",
+  textDecoration: "none",
+  "&:hover": {
+    textDecoration: "underline",
+  },
 };
 
 export default PrivacyPolicy;

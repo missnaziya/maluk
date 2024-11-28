@@ -379,7 +379,7 @@ const Footer = () => {
             <Box sx={{marginLeft:"20px"}}>
               <Link href="index.html">
                 <img
-                  src="logo.png"
+                  src="/logo.png"
                   alt="Maluk Forever Logo"
                   style={{ width: '40%' }}
                 />
@@ -423,13 +423,13 @@ const Footer = () => {
               </Typography>
               <Box component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
                 {[
-                  { name: 'Home', link: 'index.html' },
-                  { name: 'About Us', link: 'about.html' },
-                  { name: 'Blogs', link: 'blog.html' },
-                  { name: 'Category', link: 'shop.html' },
-                  { name: 'Gallery', link: 'gallery.html' },
-                  { name: 'Contact Us', link: 'contact.html' },
-                  { name: "FAQ's", link: 'faq.html' },
+                  { name: 'Home', link: '/' },
+                  { name: 'About Us', link: '/about' },
+                  { name: 'Blogs', link: '/blog' },
+                  { name: 'Category', link: '/shop' },
+                  { name: 'Gallery', link: '/gallery' },
+                  { name: 'Contact Us', link: '/contact' },
+                  { name: "FAQ's", link: '/faq' },
                 ].map((item) => (
                   <Box component="li" key={item.name} >
                     <Link href={item.link} sx={{  textDecoration: 'none' , color:"black"}}>
@@ -449,8 +449,8 @@ const Footer = () => {
               </Typography>
               <Box component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
                 {[
-                  { name: 'Our Policy', link: 'ourprivacy.html' },
-                  { name: 'Terms And Conditions', link: 'termsandconditions.html' },
+                  { name: 'Our Policy', link: '/policy/privacy-policy'},
+                  { name: 'Terms And Conditions', link: 'policy/term-condition' },
                   { name: 'How We Make', link: 'wemake.html' },
                   { name: 'Fan Page', link: 'fanpage.html' },
                   { name: 'Media', link: 'media.html' },

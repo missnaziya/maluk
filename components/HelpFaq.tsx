@@ -1,122 +1,89 @@
-import React from 'react';
-import { Box, Container, Typography, List, ListItem, ListItemText, Paper } from '@mui/material';
+import React from "react";
+import { Box, Typography, Container } from "@mui/material";
 
-const HelpFaq = () => {
-    return (
-        <section>
-            {/* Help & FAQs Section */}
-            <Container maxWidth="md" sx={{ my: 5 }}>
-                <Paper
-                    sx={{
-                        backgroundColor: '#fff',
-                        padding: 4,
-                        borderRadius: 2,
-                        boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)',
-                        transition: 'border-color 0.3s ease, box-shadow 0.3s ease',
-                    }}
-                >
-                    <Typography
-                        variant="h4"
-                        align="center"
-                        gutterBottom
-                        sx={{ color: '#f37321', fontWeight: 'bold' }}
-                    >
-                        Help & FAQs
-                    </Typography>
+interface FAQItem {
+  question: string;
+  answer: string;
+}
 
-                    {/* Frequently Asked Questions */}
-                    <Box id="faqs" sx={{ mt: 4 }}>
-                        <Box mb={2}>
-                            <Typography variant="h6" sx={{ color: '#f37321' }}>
-                                What is Myzk?
-                            </Typography>
-                            <Typography>
-                                Myzk.in is an e-commerce platform offering a wide range of products, including
-                                electronics and home appliances.
-                            </Typography>
-                        </Box>
+const faqs: FAQItem[] = [
+  {
+    question: "1. What makes Maluk Forever products unique?",
+    answer:
+      "Maluk Forever products are crafted with the finest natural, plant-based ingredients, designed to nourish and enhance your skin's health. We focus on creating effective, gentle formulas that are safe for all skin types.",
+  },
+  {
+    question: "2. Are your products cruelty-free?",
+    answer: "Yes, we are 100% cruelty-free. None of our products are tested on animals.",
+  },
+  {
+    question: "3. Can I use your products if I have sensitive skin?",
+    answer:
+      "Yes, our products are designed to be gentle and suitable for sensitive skin. We recommend doing a patch test before use.",
+  },
+  {
+    question: "4. Are your products suitable for all skin types?",
+    answer:
+      "Yes, our products are designed for all skin types, including dry, oily, combination, and sensitive skin. We offer a range of products tailored to different skincare needs and concerns.",
+  },
+  {
+    question: "5. How do I choose the right products for my skin?",
+    answer:
+      "Browse our product guides or contact our customer support for personalized recommendations based on your skin type.",
+  },
+  {
+    question: "6. Can I return or exchange products?",
+    answer:
+      "Yes, we offer returns and exchanges within a specific timeframe. Please refer to our return policy for more details.",
+  },
+];
 
-                        <Box mb={2}>
-                            <Typography variant="h6" sx={{ color: '#f37321' }}>
-                                How can I track my order?
-                            </Typography>
-                            <Typography>
-                                You can track your order by logging into your account and navigating to the Track
-                                Order section. You will find tracking information for your recent purchases there.
-                            </Typography>
-                        </Box>
-
-                        <Box mb={2}>
-                            <Typography variant="h6" sx={{ color: '#f37321' }}>
-                                What payment methods are accepted?
-                            </Typography>
-                            <Typography>
-                                We accept various payment methods, including credit/debit cards, PayPal, and bank
-                                transfers. You can select your preferred payment option during checkout.
-                            </Typography>
-                        </Box>
-
-                        <Box mb={2}>
-                            <Typography variant="h6" sx={{ color: '#f37321' }}>
-                                How do I return an item?
-                            </Typography>
-                            <Typography>
-                                To return an item, please visit our Return section on the website, fill out the
-                                return form, and follow the instructions provided. Make sure the item is in its
-                                original packaging and condition.
-                            </Typography>
-                        </Box>
-
-                        <Box mb={2}>
-                            <Typography variant="h6" sx={{ color: '#f37321' }}>
-                                What should I do if I forget my password?
-                            </Typography>
-                            <Typography>
-                                If you forget your password, click on the Forgot Password link on the login page.
-                                Follow the instructions to reset your password using your registered email address.
-                            </Typography>
-                        </Box>
-                    </Box>
-
-                    {/* Contact Information */}
-                    <Box >
-                        <Typography variant="h6" sx={{ color: '#f37321' }}>
-                            Contact Us
-                        </Typography>
-                        <Typography>
-                            If you have further questions or need additional assistance, feel free to reach out to
-                            us:
-                        </Typography>
-
-                        <List>
-                            <ListItem>
-                                <ListItemText
-                                    primary="Email:"
-                                    secondary="operations@myzk.in"
-                                    primaryTypographyProps={{ fontWeight: 'bold' }}
-                                    sx={{ borderRight: '2px solid orange', pr: 3 }} // Add right border and padding
-                                />
-                                <ListItemText
-                                    primary="Address:"
-                                    secondary="E-169, E Block, Sector 63, Noida, (U.P) 201301"
-                                    primaryTypographyProps={{ fontWeight: 'bold' }}
-                                    sx={{ borderRight: '2px solid orange', pl: 2 }} // No border for the last item and padding-left
-                                />
-                                <ListItemText
-                                    primary="Phone:"
-                                    secondary="+91 9958039775, +91 9650745556"
-                                    primaryTypographyProps={{ fontWeight: 'bold' }}
-                                    sx={{ borderRight: 'none', pl: 2 }} // Add right border and padding
-                                />
-
-                            </ListItem>
-                        </List>
-
-                    </Box>
-                </Paper>
-            </Container>
-        </section>
-    );
+const HelpFaq: React.FC = () => {
+  return (
+    <Box
+      component="section"
+      sx={{
+        maxWidth: "1000px",
+        margin: "20px auto",
+        padding: "40px",
+        backgroundColor: "#fff",
+        borderRadius: "8px",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+      }}
+    >
+      <Container>
+        {faqs.map((faq, index) => (
+          <Box key={index} sx={{ marginBottom: "20px" }}>
+            <Typography
+              variant="h5"
+              sx={{
+                color: "#b09614",
+                fontWeight: "bold",
+                fontSize: "1.3rem",
+                marginTop: "15px",
+                paddingLeft: "10px",
+                borderLeft: "4px solid #f4f2e4",
+                borderRight: "3px solid #f4f2e4",
+                borderBottomLeftRadius: "23px",
+              }}
+            >
+              {faq.question}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "1rem",
+                lineHeight: "1.6",
+                color: "#333",
+                marginTop: "10px",
+              }}
+            >
+              {faq.answer}
+            </Typography>
+          </Box>
+        ))}
+      </Container>
+    </Box>
+  );
 };
 
 export default HelpFaq;

@@ -211,11 +211,12 @@ const Header = () => {
                       fontWeight: 'bold',
                       fontSize: '14px',
                       padding: '5px 8px',
-                      '&:hover': { borderBottom: '2px solid #ea580c' }
+                      '&:hover': { borderBottom: '2px solid #b09615' }
                     }}
                   >
                     Home
                   </Button>
+
                   <Box
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
@@ -225,9 +226,35 @@ const Header = () => {
                       padding: '5px 8px'
                     }}
                   >
-                    <Button color='inherit' sx={{fontWeight: 'bold',}}>Category</Button>
+                    <Button color='inherit' sx={{fontWeight: 'bold',}}> Category</Button>
                   </Box>
                   <Button
+                    component={Link}
+                    href='/gallery'
+                    color='inherit'
+                    sx={{
+                      fontWeight: 'bold',
+                      fontSize: '14px',
+                      padding: '5px 8px',
+                      '&:hover': { borderBottom: '2px solid #b09615' }
+                    }}
+                  >
+                    Gallery
+                  </Button>
+                  <Button
+                    component={Link}
+                    href='/blog'
+                    color='inherit'
+                    sx={{
+                      fontWeight: 'bold',
+                      fontSize: '14px',
+                      padding: '5px 8px',
+                      '&:hover': { borderBottom: '2px solid #b09615' }
+                    }}
+                  >
+                    Blog
+                  </Button>
+                  {/* <Button
                     component={Link}
                     href='/shop/new-products'
                     color='inherit'
@@ -235,12 +262,13 @@ const Header = () => {
                       fontWeight: 'bold',
                       fontSize: '14px',
                       padding: '5px 8px',
-                      '&:hover': { borderBottom: '2px solid #ea580c' }
+                      '&:hover': { borderBottom: '2px solid #b09615' }
                     }}
                   >
                     New Arrivals
-                  </Button>
-                  <Button
+                  </Button> */}
+                 
+                  {/* <Button
                     component={Link}
                     href='/support'
                     color='inherit'
@@ -248,12 +276,12 @@ const Header = () => {
                       fontWeight: 'bold',
                       fontSize: '14px',
                       padding: '5px 8px',
-                      '&:hover': { borderBottom: '2px solid #ea580c' }
+                      '&:hover': { borderBottom: '2px solid #b09615' }
                     }}
                   >
                     Support
-                  </Button>
-                  <Button
+                  </Button> */}
+                  {/* <Button
                     component={Link}
                     href='/warranty'
                     color='inherit'
@@ -261,10 +289,36 @@ const Header = () => {
                       fontWeight: 'bold',
                       fontSize: '14px',
                       padding: '5px 8px',
-                      '&:hover': { borderBottom: '2px solid #ea580c' }
+                      '&:hover': { borderBottom: '2px solid #b09615' }
                     }}
                   >
                     Warranty
+                  </Button> */}
+                  <Button
+                    component={Link}
+                    href='/contact'
+                    color='inherit'
+                    sx={{
+                      fontWeight: 'bold',
+                      fontSize: '14px',
+                      padding: '5px 8px',
+                      '&:hover': { borderBottom: '2px solid #b09615' }
+                    }}
+                  >
+                    Contact
+                  </Button>
+                  <Button
+                    component={Link}
+                    href='/about'
+                    color='inherit'
+                    sx={{
+                      fontWeight: 'bold',
+                      fontSize: '14px',
+                      padding: '5px 8px',
+                      '&:hover': { borderBottom: '2px solid #b09615' }
+                    }}
+                  >
+                    About
                   </Button>
                 </Box>
               </Grid>

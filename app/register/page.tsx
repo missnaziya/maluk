@@ -6,6 +6,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { Box, Typography, TextField, Button, Divider } from "@mui/material";
+
 
 const RegisterPage = () => {
   const [error, setError] = useState("");
@@ -83,14 +85,16 @@ const RegisterPage = () => {
   return (
     <div className="bg-white">
       <SectionTitle title="Register" path="Home | Register" />
-      <div className="flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8 bg-white">
-        <div className="flex justify-center flex-col items-center">
+      <div 
+      // className="flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8 bg-white"
+      >
+        {/* <div className="flex justify-center flex-col items-center">
           <h2 className="mt-6 text-center text-2xl leading-9 tracking-tight text-gray-900">
             Sign up on our website
           </h2>
-        </div>
+        </div> */}
 
-        <div className="mt-5 sm:mx-auto sm:w-full sm:max-w-[480px]">
+        {/* <div className="mt-5 sm:mx-auto sm:w-full sm:max-w-[480px]">
           <div className="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
@@ -184,9 +188,7 @@ const RegisterPage = () => {
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
-                {/* <p className="text-sm text-gray-500 mt-1">
-              
-              </p> */}
+               
               </div>
 
               <div className="flex items-center justify-between">
@@ -229,7 +231,158 @@ const RegisterPage = () => {
               </div>
             </form>
           </div>
-        </div>
+        </div> */}
+           <Box
+      className="register-section"
+      sx={{
+        backgroundColor: "#f9f9f9",
+        minHeight: "80vh",
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <Box
+        className="register-cont"
+        sx={{
+          maxWidth: "800px",
+          margin: "auto",
+          backgroundColor: "white",
+          boxShadow: 2,
+          borderRadius: 2,
+        }}
+      >
+        <Box className="row" sx={{ display: "flex", flexWrap: "wrap" }}>
+          {/* Left Section */}
+          <Box
+            className="col-md-6"
+            sx={{
+              flex: "1 1 50%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: 5,
+              borderRight: { xs: 0, md: "1px solid #f9f9f9" },
+            }}
+          >
+            <Box textAlign="center">
+              <img
+                src="/logo.png"
+                alt="Logo"
+                style={{ width: "200px", borderRadius: "10px",margin:"auto" }}
+              />
+              <Typography
+                sx={{
+                  color: "#b09615",
+                  fontWeight: "bold",
+                  marginTop: 2,
+                }}
+              >
+                Join Us!
+              </Typography>
+              <Typography>
+                Create an account to get started. If you already have an account, you can log in.
+              </Typography>
+            </Box>
+          </Box>
+
+          {/* Right Section */}
+          <Box className="col-md-6" sx={{ flex: "1 1 50%", padding: 4 }}>
+            <Box>
+              <form onSubmit={handleSubmit}>
+             
+
+                <TextField
+                  fullWidth
+                  name="name"
+                  label="First Name"
+                  margin="normal"
+                  required
+                />
+                <TextField
+                  fullWidth
+                  name="lastname"
+                  label="Last Name"
+                  margin="normal"
+                  required
+                />
+                <TextField
+                  fullWidth
+                  name="email"
+                  label="Email Address"
+                  margin="normal"
+                  required
+                  type="email"
+                />
+                <TextField
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  margin="normal"
+                  required
+                  type="password"
+                />
+                <TextField
+                  fullWidth
+                  name="confirmpassword"
+                  label="Confirm Password"
+                  margin="normal"
+                  required
+                  type="password"
+                />
+
+                <Box display="flex" alignItems="center" mt={2}>
+                  <input
+                    type="checkbox"
+                    id="terms"
+                    style={{ marginRight: "8px" }}
+                  />
+                  <label
+                    htmlFor="terms"
+                    style={{ fontSize: "14px", color: "#333" }}
+                  >
+                    Accept our terms and privacy policy
+                  </label>
+                </Box>
+
+                <Button
+                  type="submit"
+                  variant="contained"
+                  sx={{
+                    backgroundColor: "#b09615 !important",
+                    color: "white",
+                    mt: 2,
+                    "&:hover": { backgroundColor: "#998410" },
+                  }}
+                  fullWidth
+                >
+                  Sign Up
+                </Button>
+              </form>
+
+              <Divider sx={{ my: 3 }} />
+
+              <Typography textAlign="center">
+                Already have an account?{" "}
+                <Link href="/login">
+                  Log In
+                </Link>
+              </Typography>
+
+              {error && (
+                <Typography
+                  mt={2}
+                  textAlign="center"
+                  color="error"
+                  fontSize="14px"
+                >
+                  {error}
+                </Typography>
+              )}
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
       </div>
     </div>
   );

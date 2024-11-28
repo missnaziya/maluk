@@ -20,7 +20,7 @@ import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 import Login from "@/components/Login";
 import Register from "@/components/Register";
-import sha256 from "crypto-js/sha256";
+import SHA256 from "crypto-js/sha256";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import { checkPostalCodeService } from "@/utils/deliveryDtdc";
@@ -62,7 +62,7 @@ const CheckoutPage = () => {
     apartment: "",
     city: "",
     country: "",
-    postalCode: "",
+    postalCode: "", 
     orderNotice: "",
   });
   const { products, total, clearCart } = useProductStore();
@@ -94,7 +94,7 @@ const CheckoutPage = () => {
 
     const fullURL =
       dataBase64 + "/pg/v1/pay" + process.env.NEXT_PUBLIC_SALT_KEY;
-    const dataSha256 = sha256(fullURL);
+    const dataSha256 = SHA256(fullURL);
     const checksum = dataSha256 + "###" + process.env.NEXT_PUBLIC_SALT_INDEX;
 
     const UAT_PAY_API_URL =

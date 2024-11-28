@@ -53,7 +53,6 @@ export default async function RootLayout({
           {/* <Header2 /> */}
           <Header />
           <Providers>{children}</Providers>
-        <NewsLetterFooter/>
           <Footer />
         </SessionProvider>
       </body>

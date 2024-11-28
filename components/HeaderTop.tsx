@@ -3,10 +3,7 @@ import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import toast from 'react-hot-toast'
-import {
-  FaArrowRightToBracket,
-  FaRegUser,
-} from 'react-icons/fa6'
+import { FaArrowRightToBracket, FaRegUser } from 'react-icons/fa6'
 
 const HeaderTop = () => {
   const { data: session }: any = useSession()
@@ -25,11 +22,11 @@ const HeaderTop = () => {
   }
 
   return (
-    <div className='h-10 text-white bg-black max-lg:px-5 max-lg:h-16 max-[573px]:px-0'>
-      <div className='flex justify-between h-full max-lg:flex-col max-lg:justify-center max-lg:items-center max-w-screen-2xl mx-auto  max-[573px]:px-0'>
-        <ul className='flex items-center h-full gap-x-5 max-[370px]:text-sm max-[370px]:gap-x-2'>
+    <div className='h-10 px-5 text-white bg-black max-lg:px-5 max-lg:h-16 max-[573px]:px-0'>
+      <div className='flex justify-between h-full items-center gap-10 max-lg:flex-col max-lg:gap-4 max-lg:justify-center max-lg:items-center max-w-screen-2xl mx-auto max-[573px]:px-0'>
+        <ul className='flex items-center h-full w-full gap-x-5 max-[370px]:text-sm max-[370px]:gap-x-2'>
           {/* Marquee for displaying offers */}
-          <li className='font-semibold overflow-hidden text-yellow-500 w-full max-lg:w-[90%]'>
+          <li className='font-semibold text-yellow-500 w-full overflow-hidden'>
             <div className='scrolling-text text-sm max-md:text-xs'>
               🎉 Flat 50% Off on Sheetmasks! | 🚚 Free Shipping on Orders Above $100 | 🛍️ New Arrivals in Fashion!
             </div>
@@ -71,7 +68,7 @@ const HeaderTop = () => {
                 </button>
                 {/* Dropdown Menu */}
                 {dropdownOpen && (
-                  <div className='absolute right-0 z-10 mt-40 w-48 bg-white text-black rounded-md shadow-lg'>
+                  <div className='absolute right-0 z-10 mt-10 w-48 bg-white text-black rounded-md shadow-lg'>
                     <ul className='py-1'>
                       <li>
                         <Link
