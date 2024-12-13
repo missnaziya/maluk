@@ -26,17 +26,17 @@ const Hero = () => {
   const slides = [
     {
       id: 1,
-      image: "/home-banner1.jpg",
+      image: "/homebanner1.jpg",
     
     },
     {
       id: 2,
-      image: "/home-banner2.jpg",
+      image: "/homebanner2.jpg",
      
     },
     {
       id: 3,
-      image: "/home-banner3.jpg",
+      image: "/homebanner3.jpg",
     },
   ];
 
