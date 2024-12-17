@@ -137,116 +137,8 @@ function ContactUs() {
   
 
   return (
-    // <Container sx={{ py: 5 }}>
-    //   <Typography
-    //     variant="h4"
-    //     component="h2"
-    //     sx={{
-    //       fontWeight: 600,
-    //       color: 'hsl(23.43deg 89.74% 54.12%)',
-    //       mb: 3,
-    //       textAlign: 'center',
-    //     }}
-    //   >
-    //     Get in Touch
-    //   </Typography>
+    <>
 
-    //   <Grid container spacing={4}>
-    //     <Grid item xs={12} md={8}>
-    //       <Box
-    //         component="form"
-    //         onSubmit={handleSubmit}
-    //         sx={{
-    //           backgroundColor: '#fff',
-    //           p: 3,
-    //           borderRadius: 2,
-    //           boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-    //           transition: 'box-shadow 0.3s ease',
-    //           '&:hover': {
-    //             boxShadow: '0 6px 12px rgba(0, 0, 0, 0.2)',
-    //           },
-    //         }}
-    //       >
-    //         <Grid container spacing={2}>
-    //           <Grid item xs={12} sm={6}>
-    //             <TextField
-    //               fullWidth
-    //               label="Enter your name"
-    //               name="name"
-    //               value={formData.name}
-    //               onChange={handleChange}
-    //               required
-    //             />
-    //           </Grid>
-    //           <Grid item xs={12} sm={6}>
-    //             <TextField
-    //               fullWidth
-    //               label="Enter email address"
-    //               name="email"
-    //               type="email"
-    //               value={formData.email}
-    //               onChange={handleChange}
-    //               required
-    //             />
-    //           </Grid>
-    //           <Grid item xs={12}>
-    //             <TextField
-    //               fullWidth
-    //               label="Enter subject"
-    //               name="subject"
-    //               value={formData.subject}
-    //               onChange={handleChange}
-    //               required
-    //             />
-    //           </Grid>
-    //           <Grid item xs={12}>
-    //             <TextField
-    //               fullWidth
-    //               label="Enter your message"
-    //               name="message"
-    //               multiline
-    //               rows={4}
-    //               value={formData.message}
-    //               onChange={handleChange}
-    //               required
-    //             />
-    //           </Grid>
-    //           <Grid item xs={12} textAlign="center">
-    //             <Button
-    //               variant="contained"
-    //               type="submit"
-    //               sx={{
-    //                 backgroundColor: '#f37321 !important',
-    //                 color: 'white',
-    //                 '&:hover': {
-    //                   color: 'Black',
-    //                 },
-    //               }}
-    //             >
-    //               Send Message
-    //             </Button>
-    //           </Grid>
-    //         </Grid>
-    //       </Box>
-    //     </Grid>
-
-    //     {/* Contact Information */}
-    //     <Grid item xs={12} md={4}>
-    //       <Contact />
-    //     </Grid>
-    //   </Grid>
-
-    //   <Box mt={4}>
-    //     <iframe
-    //       src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d7004.450094540938!2d77.3867099!3d28.6230165!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x390ce5539e0d42b7%3A0x682b86960f5749cc!2sDigital%20Telemedia%20Technology%20Pvt.%20Ltd.%20E-169%20E%20Block%2C%20Sector%2063%20Noida%2C%20Hazratpur%20Wajidpur%2C%20Uttar%20Pradesh%20201301!3m2!1d28.623015199999998!2d77.3867281!5e0!3m2!1sen!2sin!4v1723628516193!5m2!1sen!2sin"
-    //       width="100%"
-    //       height="450"
-    //       style={{ border: 0, borderRadius: '8px' }}
-    //     //   allowFullScreen="true"
-    //       loading="lazy"
-    //     ></iframe>
-    //   </Box>
-    // </Container>
     <Container sx={{ py: 5 }}>
       <Grid container spacing={4}>
         {/* Left Section - Contact Info */}
@@ -412,6 +304,24 @@ function ContactUs() {
         </Grid>
       </Grid>
     </Container>
+
+    <Box className="maps" py={5}>
+      <Container>
+        <Box display="flex" justifyContent="center">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.225047270469!2d77.3867099!3d28.6230165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceff1773dc645%3A0xa422cb35f324c9fd!2sGround%20E%2C%20E-169%2C%20E%20Block%2C%20Sector%2063%2C%20Noida%2C%20Hazratpur%20Wajidpur%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1731649382147!5m2!1sen!2sin"
+            width="100%"
+            height="350"
+            style={{ border: 0 }}
+            // allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </Box>
+      </Container>
+    </Box>
+
+    </>
   );
 }
 export default  ContactUs

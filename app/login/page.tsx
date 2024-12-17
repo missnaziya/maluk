@@ -36,8 +36,9 @@ const LoginPage = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    console.log("E",e);
     const email = e.target[0].value;
-    const password = e.target[1].value;
+    const password = e.target[2].value;
 
     if (!isValidEmailAddressFormat(email)) {
       setError("Email is invalid");

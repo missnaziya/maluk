@@ -21,6 +21,11 @@ import BrandSection from "@/components/BrandSection";
 import ProductCategory from "@/components/ProductCategory";
 import OurStory from "@/components/OurStory";
 import CustomerReview from "@/components/CustomerReview";
+import Categories from "@/components/Categories";
+import SkinCareCategory from "@/components/SkinCareCategory";
+import TrendingProduct from "@/components/TrendingProduct";
+import Testimonials from "@/components/Testimonials";
+import LatestBlogs from "@/components/LatestBlogs";
   
   
   export default function Home() {
@@ -36,14 +41,20 @@ import CustomerReview from "@/components/CustomerReview";
     return (
       <>
         <Hero />
-        <TopSellingProducts props={{name:"topselling-products"}} />
+        {/* <TopSellingProducts props={{name:"topselling-products"}} /> */}
+        <Categories />
         <OfferBanner />
-        <BrandSection />
-        <ProductCategory />
+        <SkinCareCategory />
+        {/* <BrandSection /> */}
+        {/* <ProductCategory /> */}
         {/* <NewProducts props={{name:"new-products"}} /> */}
-        <OurStory/>
+        {/* <OurStory/> */}
+        <TrendingProduct/>
+        <Testimonials />
         <CustomerReview/>
+
         <ExtraBanner/>
+        <LatestBlogs />
         {/* <InspiredProducts props={{name:"inspired-products"}} /> */}
       </>
     );

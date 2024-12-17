@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import HeaderTop from './HeaderTop'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaBell, FaBars } from 'react-icons/fa6'
+import { FaBell, FaBars, FaCaretDown } from 'react-icons/fa6'
 
 import CartElement from './CartElement'
 import HeartElement from './HeartElement'
@@ -64,6 +64,37 @@ const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [showCategoryList, setShowCategoryList] = useState(false)
   const [categoryMenuList2, setCategoryMenuList2] = useState<Product[]>([])
+
+
+
+  // const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+  const [categoryAnchorEl, setCategoryAnchorEl] = useState<null | HTMLElement>(null)
+  const [aboutAnchorEl, setAboutAnchorEl] = useState<null | HTMLElement>(null)
+
+  // const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+  //   setAnchorEl(event.currentTarget)
+  // }
+
+  // const handleMenuClose = () => {
+  //   setAnchorEl(null)
+  // }
+
+  const handleCategoryMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setCategoryAnchorEl(event.currentTarget)
+  }
+
+  const handleCategoryMenuClose = () => {
+    setCategoryAnchorEl(null)
+  }
+  const handleAboutMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setAboutAnchorEl(event.currentTarget)
+  }
+
+  const handleAboutMenuClose = () => {
+    setAboutAnchorEl(null)
+  }
+
+
 
   const handleLogout = () => {
     setTimeout(() => signOut({ callbackUrl: '/login' }), 1000)
@@ -149,7 +180,7 @@ const Header = () => {
         </ListItem>
         <ListItem  component={Link} href='/shop/'>
           <ListItemText primary='Category' />
-        </ListItem>
+        </ListItem> 
         <ListItem  component={Link} href='/shop/new-products'>
           <ListItemText primary='New Arrivals' />
         </ListItem>
@@ -217,7 +248,7 @@ const Header = () => {
                     Home
                   </Button>
 
-                  <Box
+                  {/* <Box
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                     sx={{
@@ -227,10 +258,47 @@ const Header = () => {
                     }}
                   >
                     <Button color='inherit' sx={{fontWeight: 'bold',}}> Category</Button>
-                  </Box>
+                  </Box> */}
+
+
+<Button
+              color="inherit"
+              //  href='/about'
+              onClick={handleCategoryMenuOpen}
+              sx={{ fontWeight: 'bold', fontSize: '14px' }}
+            >
+                                  Categories
+
+              <FaCaretDown style={{ marginLeft: '5px' }} />
+            </Button>
+
+            <Menu
+              anchorEl={categoryAnchorEl}
+              open={Boolean(categoryAnchorEl)}
+              onClose={handleCategoryMenuClose}
+            >
+              {/* Example category items */}
+              <MenuItem onClick={handleCategoryMenuClose}>
+              <Link href='/shop/skin-care' passHref>
+              Skin Care
+              </Link>
+             
+              </MenuItem>
+
+              
+              <MenuItem onClick={handleCategoryMenuClose}> <Link href='/shop/personal-care' passHref>
+            Personal Care
+              </Link></MenuItem>
+              <MenuItem onClick={handleCategoryMenuClose}> <Link href='/shop/hair-accessories' passHref>
+            Hait Accessories 
+              </Link></MenuItem>
+              {/* <MenuItem onClick={handleCategoryMenuClose}> <Link href='/contact' passHref>
+            Contact
+              </Link></MenuItem> */}
+            </Menu>
                   <Button
                     component={Link}
-                    href='/gallery'
+                    href='/glimpse'
                     color='inherit'
                     sx={{
                       fontWeight: 'bold',
@@ -239,7 +307,7 @@ const Header = () => {
                       '&:hover': { borderBottom: '2px solid #b09615' }
                     }}
                   >
-                    Gallery
+                    Glimpse
                   </Button>
                   <Button
                     component={Link}
@@ -252,7 +320,7 @@ const Header = () => {
                       '&:hover': { borderBottom: '2px solid #b09615' }
                     }}
                   >
-                    Blog
+                    Glow guide
                   </Button>
                   {/* <Button
                     component={Link}
@@ -294,7 +362,7 @@ const Header = () => {
                   >
                     Warranty
                   </Button> */}
-                  <Button
+                  {/* <Button
                     component={Link}
                     href='/contact'
                     color='inherit'
@@ -306,8 +374,8 @@ const Header = () => {
                     }}
                   >
                     Contact
-                  </Button>
-                  <Button
+                  </Button> */}
+                  {/* <Button
                     component={Link}
                     href='/about'
                     color='inherit'
@@ -319,6 +387,62 @@ const Header = () => {
                     }}
                   >
                     About
+                  </Button> */}
+
+
+            <Button
+              color="inherit"
+              //  href='/about'
+              onClick={handleAboutMenuOpen}
+              sx={{ fontWeight: 'bold', fontSize: '14px' }}
+            >
+                                  About
+
+              <FaCaretDown style={{ marginLeft: '5px' }} />
+            </Button>
+
+            <Menu
+              anchorEl={aboutAnchorEl}
+              open={Boolean(aboutAnchorEl)}
+              onClose={handleAboutMenuClose}
+            >
+              {/* Example category items */}
+              <MenuItem onClick={handleAboutMenuClose}>
+              <Link href='/faq' passHref>
+              FAQ'S
+              </Link>
+             
+              </MenuItem>
+
+              
+              <MenuItem onClick={handleAboutMenuClose}> <Link href='/policy/privacy-policy' passHref>
+            Our Policy
+              </Link></MenuItem>
+              <MenuItem onClick={handleAboutMenuClose}> <Link href='policy/term-condition' passHref>
+             Terms & Conditions
+              </Link></MenuItem>
+              <MenuItem onClick={handleAboutMenuClose}> <Link href='/contact' passHref>
+            Contact
+              </Link></MenuItem>
+            </Menu>
+{/* 
+            <IconButton onClick={handleMenuOpen}>
+              <Avatar src="/randomuser.jpg" alt="profile photo" />
+            </IconButton> */}
+
+
+                  <Button
+                    component={Link}
+                    href='/career'
+                    color='inherit'
+                    sx={{
+                      fontWeight: 'bold',
+                      fontSize: '14px',
+                      padding: '5px 8px',
+                      '&:hover': { borderBottom: '2px solid #b09615' }
+                    }}
+                  >
+                    Career
                   </Button>
                 </Box>
               </Grid>

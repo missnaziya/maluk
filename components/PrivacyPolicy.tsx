@@ -16,7 +16,7 @@ const PrivacyPolicy: React.FC = () => {
         boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
       }}
     >
-      <SectionTitle title="Terms and Conditions" path="Home | Terms and Conditions" />
+      <SectionTitle title="Privacy and Policy" path="Home | Privacy Policy" />
       <Container>
         <Typography variant="body1" sx={{ marginBottom: "20px", color: "#333" }}>
           Welcome to Maluk Forever! By using our website, making a purchase, or engaging with our services, you agree to

@@ -415,7 +415,7 @@ const Footer = () => {
             </Box>
           </Grid>
 
-          {/* Quick Links Section */}
+          {/* Quick Links Section
           <Grid item xs={12} md={6} lg={2}>
             <Box>
               <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
@@ -426,10 +426,10 @@ const Footer = () => {
                   { name: 'Home', link: '/' },
                   { name: 'About Us', link: '/about' },
                   { name: 'Blogs', link: '/blog' },
-                  { name: 'Category', link: '/shop' },
-                  { name: 'Gallery', link: '/gallery' },
-                  { name: 'Contact Us', link: '/contact' },
-                  { name: "FAQ's", link: '/faq' },
+                  // { name: 'Category', link: '/shop' },
+                  // { name: 'Gallery', link: '/gallery' },
+                  // { name: 'Contact Us', link: '/contact' },
+                  // { name: "FAQ's", link: '/faq' },
                 ].map((item) => (
                   <Box component="li" key={item.name} >
                     <Link href={item.link} sx={{  textDecoration: 'none' , color:"black"}}>
@@ -439,24 +439,26 @@ const Footer = () => {
                 ))}
               </Box>
             </Box>
-          </Grid>
+          </Grid> */}
+
+
 
           {/* Useful Links Section */}
           <Grid item xs={12} md={6} lg={3}>
             <Box>
               <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
-                Useful Links
+               Join Us
               </Typography>
               <Box component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
                 {[
-                  { name: 'Our Policy', link: '/policy/privacy-policy'},
-                  { name: 'Terms And Conditions', link: 'policy/term-condition' },
-                  { name: 'How We Make', link: 'wemake.html' },
-                  { name: 'Fan Page', link: 'fanpage.html' },
-                  { name: 'Media', link: 'media.html' },
-                  { name: 'Become an Affiliate', link: 'affiliate.html' },
-                  { name: 'Feedback Form', link: 'feedback.html' },
-                  { name: 'Track Order', link: 'trackingpage.html' },
+                  { name: 'Customer Review', link: '/fan-page' },
+                { name: 'Become an Affiliate', link: '/affiliate' },
+                { name: 'Feedback Form', link: '/feedback' },
+                { name: 'Track Order', link: '/support/track-order' },
+                  // { name: 'Our Policy', link: '/policy/privacy-policy'},
+                  // { name: 'Terms And Conditions', link: 'policy/term-condition' },
+                  // { name: 'How We Make', link: '/how-we-make' },
+                  // { name: 'Media', link: 'media.html' },
                 ].map((item) => (
                   <Box component="li" key={item.name} sx={{  }}>
                     <Link href={item.link} sx={{ color:"black", textDecoration: 'none' }}>
@@ -468,6 +470,36 @@ const Footer = () => {
             </Box>
           </Grid>
 
+          {/* Quick Links Section */}
+          <Grid item xs={12} md={6} lg={2}>
+  <Box>
+    <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
+      Quick Links
+    </Typography>
+    <Box component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
+      {[
+        { name: 'Home', link: '/' },
+        // { name: 'About Us', link: '/about' },
+        // { name: 'Blogs', link: '/blog' },
+        // { name: 'Category', link: '/shop' },
+        // { name: 'Gallery', link: '/gallery' },
+        { name: 'How We Make', link: '/how-we-make' },
+        { name: 'Contact Us', link: '/contact' },
+        // { name: "FAQ's", link: '/faq' },
+      ].map((item) => (
+        <Box component="li" key={item.name}>
+          <Link href={item.link} sx={{ textDecoration: 'none', color: "black" }}>
+            {item.name}
+          </Link>
+        </Box>
+      ))}
+    </Box>
+    {/* Image at the bottom */}
+    <Box sx={{ mt: 2, textAlign: 'center' }}>
+      <img src="/gif/eye.gif" alt="Footer Decorative" width="100%" style={{ borderRadius: '8px' }} />
+    </Box>
+  </Box>
+</Grid>
           {/* Contact Information Section */}
           <Grid item xs={12} md={6} lg={4}>
             <Box sx={{marginRight:"20px"}}>

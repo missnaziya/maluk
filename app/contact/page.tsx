@@ -5,7 +5,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>  <SectionTitle title="Register" path="Home | Contact" />
+    <div>  <SectionTitle title="Contact Us" path="Home | Contact" />
 
        <ContactUs />
         <NewsLetterFooter/>

@@ -42,7 +42,7 @@ const ProductItem = ({
                 height='200' // Reduced height
                 image={
                   product.mainImage
-                    ? `/${product.mainImage}`
+                    ? `/categories/${product.mainImage}`
                     : '/product_placeholder.jpg'
                 }
                 alt='not found'

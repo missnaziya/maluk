@@ -2,11 +2,74 @@
 
 import React from "react";
 import { Box, Container, Typography, TextField, Button, Icon } from "@mui/material";
+import "./style.css"
+import { keyframes } from "@mui/system";
+
+// Keyframes for single car animation
+const singleCarAnimation = keyframes`
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+`;
 
 
 const TrackOrder = () => {
+  const imageURL =
+    "https://via.placeholder.com/150x55.png?text=Your+Image"; 
   return (
     <Box component="section" sx={{ pt: 5 }}>
+   <Box sx={{ backgroundColor: "#f1f1f1", overflow: "hidden", width: "100%" }}>
+      {/* Estimated Delivery Section */}
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          py: 3,
+          backgroundColor: "#fff",
+        }}
+      >
+        <Box textAlign="center">
+          <Typography variant="h6" gutterBottom>
+            Estimated Delivery Date
+          </Typography>
+          <Typography
+            variant="h5"
+            sx={{
+              color: "#b59c23",
+              fontWeight: "bold",
+            }}
+          >
+            To be updated post pick up
+          </Typography>
+        </Box>
+      </Box>
+
+      {/* Single Car Animation Section */}
+      <Box
+        sx={{
+          position: "relative",
+          height: 55,
+          overflow: "hidden",
+          background: "#fff",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        {/* Animated Car */}
+        <Box
+          sx={{
+            fontSize: "2rem",
+            position: "absolute",
+            animation: `${singleCarAnimation} 5s linear infinite`,
+          }}
+        >
+          🚙
+        </Box>
+      </Box>
+    </Box>
+
+
+
       <Container maxWidth="sm">
         <Box
           sx={{
@@ -19,7 +82,7 @@ const TrackOrder = () => {
         >
           <Typography
             variant="h4"
-            sx={{ color: "#f37321", display: "flex", alignItems: "center", justifyContent: "center", mb: 3 }}
+            sx={{ color: "#b09614", display: "flex", alignItems: "center", justifyContent: "center", mb: 3 }}
           >
             <Icon className="bi bi-box-seam" sx={{ fontSize: 30, mr: 1 }} />
             Track status of your shipment.
@@ -45,7 +108,7 @@ const TrackOrder = () => {
               type="submit"
               variant="contained"
               sx={{
-                backgroundColor: "#f37321 !important" ,
+                backgroundColor: "#b09614 !important" ,
                 color: "white",
                 padding: "10px 20px",
                 "&:hover": {

@@ -1,198 +1,133 @@
-import React from "react";
-import {
-  Box,
-  Typography,
-  Grid,
-  Card,
-  CardContent,
-  CardMedia,
-  Link,
-  Button,
-  Pagination,
-} from "@mui/material";
+"use client"
+import React, { useState } from 'react';
+import { Box, Container, Typography, Link, Grid, Button, Card, CardContent, CardMedia, CardActions } from '@mui/material';
+import Banner from '@/components/Banner';
 
-const BlogContent: React.FC = () => {
+const BlogContent = () => {
+  // Data arrays directly in the component
+  const categories = ['Skin Care', 'Personal Care', 'Hair Accessories'];
+  const blogPosts = [
+    {
+      // id: 'skin-care',
+      title: 'Skin Care Has No Gender: Everyone Deserves Healthy Skin',
+      date: 'October 12, 2024',
+      author: 'Malukforever',
+      category: 'Skin Care',
+      excerpt: 'Skincare isn’t about gender—it’s about caring for your skin. In this glowguide, we explore how everyone, regardless of gender, deserves a healthy, glowing complexion by focusing on essential skin care practices...',
+      image: 'img/engineer.png',
+      id: 'glowguide-post-1',
+    },
+    {
+      // id: 'personal-care',
+      title: 'How Seasonal Changes Affect Your Skin and How to Adapt Your Routine',
+      date: 'October 10, 2024',
+      author: 'Malukforever',
+      category: 'Personal Care',
+      excerpt: 'Each season brings unique challenges to your skin. This glowguide explains how to adjust your routine to keep your skin looking its best, whether it\'s winter dryness or summer oiliness...',
+      image: 'img/engineer.png',
+      id: 'glowguide-post-2',
+    },
+    {
+      // id: 'hair-accessories',
+      title: 'The Link Between Gut Health and Skin: How Your Diet Affects Your Complexion',
+      date: 'October 5, 2024',
+      author: 'Malukforever',
+      category: 'Hair Accessories',
+      excerpt: 'Did you know what you eat affects your skin? Discover how probiotics, antioxidants, and healthy fats contribute to a radiant complexion, and how sugar and dairy can impact it...',
+      image: 'img/engineer.png',
+      id: 'glowguide-post-3',
+    },
+    {
+      // id: 'hormonal-changes',
+      title: 'The Role of Hormones in Skin Health: How Your Cycle Affects Your Complexion',
+      date: 'October 15, 2024',
+      author: 'Malukforever',
+      category: 'Skin Care',
+      excerpt: 'Hormonal fluctuations throughout the month affect your skin’s health and appearance. Learn how to adapt your skincare routine to manage breakouts, dryness, and oiliness...',
+      image: 'img/engineer.png',
+      id: 'glowguide-post-4',
+    },
+  ];
+
+  // State to store the selected category
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  // Filter the posts based on selected category
+  const filteredPosts = selectedCategory === 'All' 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category === selectedCategory);
+
   return (
     <>
-      <div className="h-[250px] border-b pt-16 border-white bg-gradient-to-r from-[#b49b20] to-white mb-2 max-sm:h-[300px] max-sm:pt-16 bg-[url('/path-to-image.jpg')] bg-cover bg-center">
-        <h1 className="section-title-title text-5xl text-center mb-7 max-md:text-5xl max-sm:text-3xl text-black max-sm:mb-2">
-          {/* {title} */}
-        </h1>
-        <p className="section-title-path text-xl text-center max-sm:text-xl text-white">
-          {/* {path} */}
-        </p>
-      </div>
-
-      <Box
-        sx={{
-          maxWidth: "1000px",
-          margin: "40px auto",
-          padding: "40px",
-          backgroundColor: "#fff",
-          borderRadius: "8px",
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        }}
-      >
-        {/* Category Navigation */}
-        <Box
-          sx={{
-            textAlign: "center",
-            marginBottom: "30px",
-          }}
-        >
-          <Box component="ul" sx={{ listStyle: "none", padding: 0 }}>
-            {["Skin Care", "Personal Care", "Hair Accessories"].map(
-              (category) => (
-                <Box
-                  component="li"
-                  sx={{ display: "inline-block", mx: 2 }}
-                  key={category}
+      <Banner bg="url('/slider image 1.webp')" />
+    
+      <Card sx={{ margin: 5, mb: 3, boxShadow: 3 }}>
+        <Container maxWidth="md" sx={{ mt: 5, mb: 5 }}>
+          {/* Category Navigation */}
+          <Box sx={{ textAlign: 'center', mb: 3 }}>
+            <Grid container spacing={4} justifyContent="center">
+              <Grid item>
+                <Link 
+                  href="#" 
+                  onClick={() => setSelectedCategory('All')}
+                  sx={{ fontSize: '1.2rem', color: '#b09614', textDecoration: 'none', '&:hover': { color: '#333' } }}
                 >
-                  <Link
-                    href={`#${category.toLowerCase().replace(" ", "-")}`}
-                    sx={{
-                      fontSize: "1.2rem",
-                      textDecoration: "none",
-                      color: "#b09614",
-                      "&:hover": { color: "#333", textDecoration: "underline" },
-                    }}
+                  All Categories
+                </Link>
+              </Grid>
+              {categories.map((category) => (
+                <Grid item key={category}>
+                  <Link 
+                    href="#" 
+                    onClick={() => setSelectedCategory(category)}
+                    sx={{ fontSize: '1.2rem', color: '#b09614', textDecoration: 'none', '&:hover': { color: '#333' } }}
                   >
                     {category}
                   </Link>
-                </Box>
-              )
-            )}
+                </Grid>
+              ))}
+            </Grid>
           </Box>
-        </Box>
 
-        {/* Blog Posts */}
-        <Grid container spacing={4}>
-          {[
-            {
-              id: "skin-care",
-              title: "Skin Care Has No Gender: Everyone Deserves Healthy Skin",
-              meta: "Posted on October 12, 2024 | By Malukforever | Category: Skin Care",
-              excerpt:
-                "Skincare isn’t about gender—it’s about caring for your skin. In this blog, we explore how everyone, regardless of gender, deserves a healthy, glowing complexion by focusing on essential skin care practices...",
-              image: "assets/images/blog/blog1.jpg",
-              link: "blog-post-1.html",
-            },
-            {
-              id: "personal-care",
-              title:
-                "How Seasonal Changes Affect Your Skin and How to Adapt Your Routine",
-              meta: "Posted on October 10, 2024 | By Malukforever | Category: Personal Care",
-              excerpt:
-                "Each season brings unique challenges to your skin. This blog explains how to adjust your routine to keep your skin looking its best, whether it's winter dryness or summer oiliness...",
-              image: "assets/images/blog/blog2.jpg",
-              link: "blog-post-2.html",
-            },
-            {
-              id: "hair-accessories",
-              title:
-                "The Link Between Gut Health and Skin: How Your Diet Affects Your Complexion",
-              meta: "Posted on October 5, 2024 | By Malukforever | Category: Hair Accessories",
-              excerpt:
-                "Did you know what you eat affects your skin? Discover how probiotics, antioxidants, and healthy fats contribute to a radiant complexion, and how sugar and dairy can impact it...",
-              image: "assets/images/blog/blog3.jpg",
-              link: "blog-post-3.html",
-            },
-          ].map((post) => (
-            <Grid item xs={12} md={12} key={post.id}>
-              <Card
-                id={post.id}
-                sx={{
-                  display: "flex",
-                  flexDirection: { xs: "column", md: "row" },
-                  borderBottom: "1px solid #ddd",
-                  paddingBottom: "20px",
-                  alignItems: { xs: "center", md: "flex-start" },
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  image={post.image}
-                  alt={post.title}
-                  sx={{
-                    width: { xs: "100%", md: "250px" },
-                    height: "auto",
-                    borderRadius: "8px",
-                    marginRight: { md: "20px" },
-                    marginBottom: { xs: "15px", md: 0 },
-                  }}
-                />
-                <CardContent
-                  sx={{
-                    textAlign: { xs: "center", md: "left" },
-                  }}
-                >
-                  <Typography
-                    variant="h5"
-                    sx={{
-                      color: "#b09614",
-                      "&:hover a": { color: "#333" },
-                    }}
-                  >
-                    <Link
-                      href={post.link}
-                      sx={{
-                        color: "#b09614",
-                        textDecoration: "none",
-                        "&:hover": {
-                          color: "#333",
-                          textDecoration: "underline",
-                        },
-                      }}
-                    >
+          {/* Blog Posts in Cards */}
+          {filteredPosts.map((post) => (
+            <Card key={post.id} sx={{ display: 'flex', mb: 3, boxShadow: 3 }}>
+              <CardMedia
+                component="img"
+                sx={{ width: 250, objectFit: 'cover', borderRadius: '8px', margin: 2 }}
+                image={post.image}
+                alt={post.title}
+              />
+              <Box sx={{ flex: 1 }}>
+                <CardContent>
+                  <Typography variant="h6" sx={{ color: '#b09614', mb: 1 }}>
+                    <Link href={`/blog/${post.id}`} sx={{ color: '#b09614', textDecoration: 'none', '&:hover': { color: '#333' } }}>
                       {post.title}
                     </Link>
                   </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ marginBottom: "10px" }}
-                  >
-                    {post.meta}
+                  <Typography variant="body2" sx={{ color: '#777', mb: 1 }}>
+                    <span>Posted on {post.date}</span> | <span>By {post.author}</span> | <span>Category: {post.category}</span>
                   </Typography>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      lineHeight: 1.6,
-                      color: "#333",
-                      marginBottom: "15px",
-                    }}
-                  >
+                  <Typography variant="body1" sx={{ color: '#333', lineHeight: 1.6, mb: 1 }}>
                     {post.excerpt}
                   </Typography>
-                  <Button
-                    href={post.link}
-                    variant="contained"
-                    color="secondary"
-                    sx={{
-                      fontWeight: "bold",
-                      textTransform: "none",
-                      backgroundColor: "#b09614",
-                      "&:hover": { backgroundColor: "#333" },
-                    }}
-                  >
-                    Read More
-                  </Button>
                 </CardContent>
-              </Card>
-            </Grid>
+                <CardActions>
+                  <Link href={`/blog/${post.id}`} sx={{ fontSize: '1rem', fontWeight: 'bold', textDecoration: 'none', '&:hover': { color: '#333' } }}>
+                    Read More
+                  </Link>
+                </CardActions>
+              </Box>
+            </Card>
           ))}
-        </Grid>
 
-        {/* Pagination */}
-        <Box
-          sx={{
-            textAlign: "center",
-            marginTop: "40px",
-          }}
-        >
-          <Pagination count={10} color="primary" />
-        </Box>
-      </Box>
+          {/* Pagination */}
+          <Box sx={{ textAlign: 'center', mt: 4 }}>
+            <Button variant="text" sx={{ mr: 2, fontSize: '1rem', fontWeight: 'bold', color: '#333' }}>&laquo; Previous</Button>
+            <Button variant="text" sx={{ fontSize: '1rem', fontWeight: 'bold', color: '#333' }}>Next &raquo;</Button>
+          </Box>
+        </Container>
+      </Card>
     </>
   );
 };

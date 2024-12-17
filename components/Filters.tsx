@@ -14,22 +14,22 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useSortStore } from "@/app/_zustand/sortStore";
 import { usePaginationStore } from "@/app/_zustand/paginationStore";
-import ENDPOINT from '@/config/appConfig';
-import { Button, Stack } from '@mui/material';
+import ENDPOINT from "@/config/appConfig";
+import { Box, Button, Checkbox, FormControlLabel, Stack } from "@mui/material";
 
 import Link from "next/link";
 
 interface InputCategory {
-  inStock: { text: string, isChecked: boolean },
-  outOfStock: { text: string, isChecked: boolean },
-  priceFilter: { text: string, value: number },
-  ratingFilter: { text: string, value: number },
+  inStock: { text: string; isChecked: boolean };
+  outOfStock: { text: string; isChecked: boolean };
+  priceFilter: { text: string; value: number };
+  ratingFilter: { text: string; value: number };
 }
 
-  const Filters = () => {
+const Filters = () => {
   const pathname = usePathname();
   const { replace } = useRouter();
-  const category = pathname.split('/')[2]; 
+  const category = pathname.split("/")[2];
 
   // getting current page number from Zustand store
   const { page } = usePaginationStore();
@@ -54,14 +54,18 @@ interface InputCategory {
     replace(`${pathname}?${params}`);
   }, [inputCategory, sortBy, page]);
 
-
-
   const [categoryMenuList, setCategoryMenuList] = useState([]);
-  const excludedSlugs = ['inspired-products', 'topselling-products', 'new-products'];
+  const excludedSlugs = [
+    "inspired-products",
+    "topselling-products",
+    "new-products",
+  ];
 
   useEffect(() => {
-    fetch(process.env.NEXT_PUBLIC_BASE_URL + "/api/categories/", { cache: "no-store" })
-    // fetch(ENDPOINT.BASE_URL + "/api/categories/", { cache: "no-store" })
+    fetch(process.env.NEXT_PUBLIC_BASE_URL + "/api/categories/", {
+      cache: "no-store",
+    })
+      // fetch(ENDPOINT.BASE_URL + "/api/categories/", { cache: "no-store" })
       .then((res) => res.json())
       .then((data) => {
         setCategoryMenuList(data);
@@ -76,8 +80,8 @@ interface InputCategory {
         {/* <h3 className="text-xl mb-2">Availability</h3> */}
         <h3 className="text-xl mb-2">Category</h3>
         {/* <Link href={`/shop${item.href}`} key={item.id} passHref> */}
-    <div className="form-control">
-      {/* <Stack spacing={1}>
+        <div className="form-control">
+          {/* <Stack spacing={1}>
         {categoryMenuList
            .filter((item:any) => !excludedSlugs.includes(item.name )) // Filter out the excluded slugs
            .map((item:any) => (
@@ -100,7 +104,7 @@ interface InputCategory {
             </Link>
           ))}
       </Stack> */}
-        <Stack spacing={1}>
+          {/* <Stack spacing={1}>
         {categoryMenuList
           .filter((item:any) => !excludedSlugs.includes(item.name))
           .map((item : any) => {
@@ -128,10 +132,57 @@ interface InputCategory {
               </Link>
             );
           })}
-      </Stack>
-    </div>
-     
+      </Stack> */}
+          <Stack spacing={1}>
+            {categoryMenuList
+              .filter((item: any) => !excludedSlugs.includes(item.name))
+              .map((item: any) => {
+                const isActive = pathname === `/shop${item.href}`; // Check if current path matches
+                return (
+                  <Box key={item.id}>
+                    <Link href={`/shop${item.href}`} passHref>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            checked={isActive} // Checkbox is checked if the category is active
+                            sx={{
+                              color: isActive ? "#b09614" : "black", // Active category styling
+                              "&.Mui-checked": {
+                                color: "#b09614", // Color for the checked state
+                              },
+                            }}
+                          />
+                        }
+                        label={item.name}
+                      />
+                    </Link>
+                  </Box>
+                );
+              })}
+          </Stack>
+        </div>
       </div>
+      
+
+<Button
+  variant="outlined"
+  sx={{
+    color: "white", // Set text color
+    background:"#b09614 !important",
+    borderColor: "gray", // Border color
+    textTransform: "none", // Remove uppercase text transformation
+    padding: "6px 12px", // Standard padding
+    fontSize: "14px", // Adjust font size to look like an HTML button
+    '&:hover': {
+      borderColor: "darkgray", // Darken border on hover
+      background: "black !important", // Keep background transparent on hover
+    },
+  }}
+>
+  <Link href="/shop">
+  Clear Filter
+  </Link>
+</Button>
 
       <div className="divider"></div>
       {/* <div className="flex flex-col gap-y-1 ">

@@ -8,6 +8,12 @@ import { getServerSession } from "next-auth";
 import "svgmap/dist/svgMap.min.css";
 import Header2 from "@/components/Header2";
 import Head from "next/head";
+// pages/_app.js or _app.tsx
+// pages/_app.tsx or pages/_document.tsx
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+
 import NewsLetterFooter from "@/components/NewsLetterfooter";
 
 const inter = Inter({ subsets: ["latin"] });

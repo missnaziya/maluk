@@ -27,9 +27,12 @@ const RegisterPage = () => {
   };
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const email = e.target[2].value;
-    const password = e.target[3].value;
-    const confirmPassword = e.target[4].value;
+ 
+    
+    const email = e.target[4].value;
+    const password = e.target[6].value;
+    const confirmPassword = e.target[8].value;
+    alert(password)
 
     if (!isValidEmail(email)) {
       // setError("Email is invalid");
