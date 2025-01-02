@@ -16,12 +16,10 @@ const Page = () => {
       id: orderId,
       status: "payment received",
     });
-    console.log("update api response:", response);
   };
 
   useEffect(() => {
     if (transactionid && transactionid.length > 0) {
-      console.log("Updating customer order status as payment received");
       updateCustomerOrderStatus(transactionid);
       const data = {
         consignments: [

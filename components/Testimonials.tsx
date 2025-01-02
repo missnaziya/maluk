@@ -9,13 +9,16 @@ import { ArrowForward, ArrowBack } from '@mui/icons-material';
 const testimonials = [
   {
     imgSrc: "/categories/skin-care/Shower-Oil.jpg",
-    name: "Lorem, ipsum.",
-    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam aperiam doloremque excepturi!"
+    name: "Shower Oil",
+    text: "shower oil ka feel is just next level! Smooth and soft skin ho jati hai, aur fragrance bhi acchi hai.",
+    au: "Rahul Verma"
+   
   },
   {
-    imgSrc: "/categories/skin-care/Serum.jpg",
-    name: "Dolor sit amet.",
-    text: "Doloremque, ipsum velit quia pariatur, eligendi autem asperiores at. Ipsam quas nihil reprehenderit!"
+    imgSrc: "/categories/skin-care/sheetmask/Collagen.png",
+    name: "Sheet mask",
+    text: "Sheet mask ka packaging bhi accha hai and travel-friendly. Skin bilkul calm and clear lagti hai after use",
+    au: "Kiran Yadav"
   },
   // Add more testimonials here
 ];
@@ -106,8 +109,12 @@ const Testimonials = () => {
                     borderRadius: '8px',
                   }}
                 >
-                  "{testimonial.text}"
+                  {testimonial.text}
                 </Typography>
+                <Typography style={{ color: '#b09614', fontWeight: 'bold' }}>
+  {testimonial.au}
+</Typography>
+
               </Paper>
             </Box>
           ))}

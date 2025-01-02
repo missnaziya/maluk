@@ -1,27 +1,23 @@
-const { createServer } = require('https');
+const { createServer } = require('http');
 const { parse } = require('url');
 const next = require('next');
-const fs = require('fs');
-const path = require('path');
 
 const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev : false });
+const app = next({ dev });
 const handle = app.getRequestHandler();
 
-const httpsOptions = {
-  key: fs.readFileSync('/etc/letsencrypt/live/myzk.in/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/myzk.in/fullchain.pem')
-};
-
 app.prepare().then(() => {
-  createServer(httpsOptions, (req, res) => {
+  createServer((req, res) => {
     const parsedUrl = parse(req.url, true);
     handle(req, res, parsedUrl);
   }).listen(4000, (err) => {
     if (err) throw err;
-    console.log('> Ready on https://localhost:4000');
+    console.log('> Ready on http://localhost:4000');
   });
 });
+
+
+
 
 
 // const { createServer } = require('https');
@@ -31,12 +27,12 @@ app.prepare().then(() => {
 // const path = require('path');
 
 // const dev = process.env.NODE_ENV !== 'production';
-// const app = next({ dev : false });
+// const app = next({ dev });
 // const handle = app.getRequestHandler();
 
 // const httpsOptions = {
-//   key: fs.readFileSync('/etc/letsencrypt/live/myzk.in/privkey.pem'),
-//   cert: fs.readFileSync('/etc/letsencrypt/live/myzk.in/fullchain.pem')
+//   key: fs.readFileSync(path.join(__dirname, 'cert/myzk.key')),
+//   cert: fs.readFileSync(path.join(__dirname, 'cert/myzk.crt')),
 // };
 
 // app.prepare().then(() => {
@@ -48,4 +44,3 @@ app.prepare().then(() => {
 //     console.log('> Ready on https://localhost:4000');
 //   });
 // });
-

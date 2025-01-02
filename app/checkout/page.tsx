@@ -231,7 +231,6 @@ const CheckoutPage = () => {
         })
         .then((data) => {
           const orderId: string = data.id;
-          console.log("Trying to make payment for order id", orderId);
 
           setCheckoutForm({
             name: "",
@@ -307,7 +306,6 @@ const CheckoutPage = () => {
 
       
       const result = await checkPostalCodeService(orgPincode, postalCode); // Replace "160036" with orgPincode
-      console.log("result?.data?.ZIPCODE_RESP[0]?.MESSAGE",result.ZIPCODE_RESP?.[0]?.MESSAGE);
       setServiceStatus(result.ZIPCODE_RESP?.[0]?.MESSAGE);
     } else {
       setServiceStatus(null);

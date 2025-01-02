@@ -137,7 +137,7 @@ const Career: React.FC = () => {
           Why Join Us?
         </Typography>
         <Typography variant="body1" align="center" paragraph>
-          At Maluk Forever, we're not just about skincare — we're about enhancing lives.
+          At Maluk Forever, were not just about skincare — were about enhancing lives.
           Join us and be part of a team dedicated to innovation, quality, and making a
           lasting impact in the beauty and wellness industry.
         </Typography>
@@ -221,7 +221,7 @@ const Career: React.FC = () => {
                 For Any Query
               </Typography>
               <Typography sx={{ mb: 2, textAlign: 'center' }}>
-                We'd love to hear from you! Whether you have a question, feedButtonck, or need assistance, feel free to reach out to us.
+                Wed love to hear from you! Whether you have a question, feedButtonck, or need assistance, feel free to reach out to us.
               </Typography>
 
               {/* Contact Information with Icons */}
@@ -250,7 +250,7 @@ const Career: React.FC = () => {
 
         <Box sx={{ mt: 4, textAlign: 'center' }}>
           <Typography variant="body1">
-            If you're ready to take your career to the next level and make a real difference, Maluk Forever is the place for you.
+            If youre ready to take your career to the next level and make a real difference, Maluk Forever is the place for you.
             Explore our open positions below and apply today!
           </Typography>
         </Box>

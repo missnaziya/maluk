@@ -31,7 +31,6 @@ app.use(
 
 
 
-console.log("1");
 
 app.use(fileUpload());
 

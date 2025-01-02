@@ -35,6 +35,7 @@ interface RegisterProps {
     const password = e.target[3].value;
     const confirmPassword = e.target[4].value;
 
+
     if (!isValidEmail(email)) {
       // setError("Email is invalid");
       toast.error("Email is invalid");
@@ -52,7 +53,6 @@ interface RegisterProps {
       toast.error("Passwords are not equal");
       return;
     }
-
     try {
       // sending API request for registering user
       const res = await fetch("/api/register", {

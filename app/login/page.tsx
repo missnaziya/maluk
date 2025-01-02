@@ -301,7 +301,7 @@ const LoginPage = () => {
             <Box textAlign="center">
               <img src="/logo.png" alt="Logo" style={{ width: "200px", borderRadius: "10px", margin:"auto" }} />
               <Typography sx={{ color: "#b09615", fontWeight: "bold", marginTop: 2 }}>Welcome back!</Typography>
-              <Typography>Please log in to your account to continue. If you don't have an account, you can sign up.</Typography>
+              <Typography>Please log in to your account to continue. If you dont have an account, you can sign up.</Typography>
             </Box>
           </Box>
 
@@ -367,7 +367,7 @@ const LoginPage = () => {
               )}
               <Divider sx={{ my: 3 }} />
               <Typography textAlign="center">
-                Don't have an account?{" "}
+                Dont have an account?{" "}
                 <Link href="/register" >
                   Sign Up
                 </Link>

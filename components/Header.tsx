@@ -409,7 +409,7 @@ const Header = () => {
               {/* Example category items */}
               <MenuItem onClick={handleAboutMenuClose}>
               <Link href='/faq' passHref>
-              FAQ'S
+              FAQS
               </Link>
              
               </MenuItem>
@@ -418,7 +418,7 @@ const Header = () => {
               <MenuItem onClick={handleAboutMenuClose}> <Link href='/policy/privacy-policy' passHref>
             Our Policy
               </Link></MenuItem>
-              <MenuItem onClick={handleAboutMenuClose}> <Link href='policy/term-condition' passHref>
+              <MenuItem onClick={handleAboutMenuClose}> <Link href='/term-condition' passHref>
              Terms & Conditions
               </Link></MenuItem>
               <MenuItem onClick={handleAboutMenuClose}> <Link href='/contact' passHref>

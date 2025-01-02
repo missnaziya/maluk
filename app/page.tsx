@@ -26,6 +26,7 @@ import SkinCareCategory from "@/components/SkinCareCategory";
 import TrendingProduct from "@/components/TrendingProduct";
 import Testimonials from "@/components/Testimonials";
 import LatestBlogs from "@/components/LatestBlogs";
+import Welcome from "@/components/welcome";
   
   
   export default function Home() {
@@ -50,6 +51,7 @@ import LatestBlogs from "@/components/LatestBlogs";
         {/* <NewProducts props={{name:"new-products"}} /> */}
         {/* <OurStory/> */}
         <TrendingProduct/>
+        <Welcome/>
         <Testimonials />
         <CustomerReview/>
 

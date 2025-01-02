@@ -12,7 +12,6 @@ interface PolicyPageProps {
 
 export default function PolicyPage({ params }: PolicyPageProps) {
   const { slug } = params;
-  console.log("slug.............",slug);
   
 
   const renderPolicyComponent = (slug: string) => {
@@ -23,8 +22,8 @@ export default function PolicyPage({ params }: PolicyPageProps) {
         return <RefundReturnPolicy />;
       case 'shipping-delivery':
         return <ShippingDeliveryPolicy />;
-      case 'term-condition':
-        return <TermConditionPolicy />;
+      // case 'term-condition':
+      //   return <TermConditionPolicy />;
       default:
         return <div>Policy not found.</div>;
     }
