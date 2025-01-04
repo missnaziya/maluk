@@ -14,7 +14,7 @@ const BlogContent = () => {
       author: 'Malukforever',
       category: 'Skin Care',
       excerpt: 'Skincare isn’t about gender—it’s about caring for your skin. In this glowguide, we explore how everyone, regardless of gender, deserves a healthy, glowing complexion by focusing on essential skin care practices...',
-      image: 'img/engineer.png',
+      image: 'blogs/blog-1.jpg',
       id: 'glowguide-post-1',
     },
     {
@@ -24,7 +24,7 @@ const BlogContent = () => {
       author: 'Malukforever',
       category: 'Personal Care',
       excerpt: 'Each season brings unique challenges to your skin. This glowguide explains how to adjust your routine to keep your skin looking its best, whether it\'s winter dryness or summer oiliness...',
-      image: 'img/engineer.png',
+      image: 'blogs/blog-2.jpg',
       id: 'glowguide-post-2',
     },
     {
@@ -34,7 +34,7 @@ const BlogContent = () => {
       author: 'Malukforever',
       category: 'Hair Accessories',
       excerpt: 'Did you know what you eat affects your skin? Discover how probiotics, antioxidants, and healthy fats contribute to a radiant complexion, and how sugar and dairy can impact it...',
-      image: 'img/engineer.png',
+      image: 'blogs/blog-3.jpg',
       id: 'glowguide-post-3',
     },
     {
@@ -44,7 +44,7 @@ const BlogContent = () => {
       author: 'Malukforever',
       category: 'Skin Care',
       excerpt: 'Hormonal fluctuations throughout the month affect your skin’s health and appearance. Learn how to adapt your skincare routine to manage breakouts, dryness, and oiliness...',
-      image: 'img/engineer.png',
+      image: 'blogs/blog-4.jpg',
       id: 'glowguide-post-4',
     },
   ];
@@ -59,7 +59,7 @@ const BlogContent = () => {
 
   return (
     <>
-      <Banner bg="url('/slider image 1.webp')" />
+      <Banner bg="url('/bread-blog.jpg')" />
     
       <Card sx={{ margin: 5, mb: 3, boxShadow: 3 }}>
         <Container maxWidth="md" sx={{ mt: 5, mb: 5 }}>

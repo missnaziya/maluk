@@ -53,9 +53,9 @@ import Welcome from "@/components/welcome";
         <TrendingProduct/>
         <Welcome/>
         <Testimonials />
-        <CustomerReview/>
 
         <ExtraBanner/>
+        <CustomerReview/>
         <LatestBlogs />
         {/* <InspiredProducts props={{name:"inspired-products"}} /> */}
       </>

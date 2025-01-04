@@ -7,6 +7,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import SectionTitle from './SectionTitle';
+import Banner from './Banner';
 
 // Move the Contact definition here
 const Contact = () => (
@@ -137,7 +138,6 @@ function ContactUs() {
 
   return (
     <>
-
     <Container sx={{ py: 5 }}>
       <Grid container spacing={4}>
         {/* Left Section - Contact Info */}

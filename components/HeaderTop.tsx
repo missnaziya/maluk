@@ -1,13 +1,22 @@
 'use client'
 import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import toast from 'react-hot-toast'
 import { FaArrowRightToBracket, FaRegUser } from 'react-icons/fa6'
 
 const HeaderTop = () => {
   const { data: session }: any = useSession()
   const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [visitCount, setVisitCount] = useState(0)
+
+  useEffect(() => {
+    // Retrieve visit count from localStorage or set initial value
+    const storedCount = localStorage.getItem('visitCount')
+    const count = storedCount ? parseInt(storedCount) + 1 : 1
+    setVisitCount(count)
+    localStorage.setItem('visitCount', count.toString())
+  }, [])
 
   const handleLogout = () => {
     setTimeout(() => signOut({ callbackUrl: '/login' }), 1000)
@@ -24,14 +33,20 @@ const HeaderTop = () => {
   return (
     <div className='h-10 px-5 text-white bg-black max-lg:px-5 max-lg:h-16 max-[573px]:px-0'>
       <div className='flex justify-between h-full items-center gap-10 max-lg:flex-col max-lg:gap-4 max-lg:justify-center max-lg:items-center max-w-screen-2xl mx-auto max-[573px]:px-0'>
-        <ul className='flex items-center h-full w-full gap-x-5 max-[370px]:text-sm max-[370px]:gap-x-2'>
-          {/* Marquee for displaying offers */}
-          <li className='font-semibold text-yellow-500 w-full overflow-hidden'>
-            <div className='scrolling-text text-sm max-md:text-xs'>
-              🎉 Flat 50% Off on Sheetmasks! | 🚚 Free Shipping on Orders Above $100 | 🛍️ New Arrivals in Fashion!
-            </div>
-          </li>
-        </ul>
+      <ul className='flex items-center h-full w-full gap-x-5 max-[370px]:text-sm max-[370px]:gap-x-2'>
+  {/* Visit Count */}
+  <li className='font-semibold text-white-500 flex items-center gap-x-2'>
+    <span>Visits:</span>
+    <span>{visitCount}</span>
+  </li>
+  {/* Marquee for displaying offers */}
+  <li className='font-semibold text-yellow-500 w-full overflow-hidden'>
+    <div className='scrolling-text text-sm max-md:text-xs'>
+      🎉 Flat 50% Off on Sheetmasks! | 🚚 Free Shipping on Orders Above $100 | 🛍️ New Arrivals in Fashion! | 📞 Call us now: +91 8588801711
+    </div>
+  </li>
+</ul>
+
         <ul className='flex items-center gap-x-5 h-full max-[370px]:text-sm max-[370px]:gap-x-2 font-semibold'>
           {!session ? (
             <>

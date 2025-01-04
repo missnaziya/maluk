@@ -5,6 +5,7 @@ import { Container, Grid, Typography, Box, Button, Card, CardContent, CardMedia,
 import Image from 'next/image';
 import { styled } from '@mui/system';
 import Slider from "react-slick";
+import Banner from '@/components/Banner';
 
 interface FormData {
   firstName: string;
@@ -131,8 +132,20 @@ const Career: React.FC = () => {
     
 
   return (
-    <section className="career">
-          <Container maxWidth="lg" sx={{ py: 5 }}>
+    <section className="career"     style={{
+      backgroundImage: "url('/welcome2.jpg')",
+  backgroundSize: 'contain', // Ensures the entire image is visible
+  backgroundRepeat:'no-repeat'
+}}>
+      
+      <Banner bg="url('/bread-career.jpg')" />
+          <Container maxWidth="lg" sx={{ py: 5 }}  
+          style={{
+            backgroundImage: "url('/welcome2.jpg')",
+        backgroundSize: 'contain', // Ensures the entire image is visible
+        backgroundRepeat:'no-repeat'
+      }}
+      >
         <Typography variant="h3" align="center" gutterBottom sx={{ color: "#b09614", textAlign: 'center', mb: 3 }}  >
           Why Join Us?
         </Typography>
@@ -255,7 +268,11 @@ const Career: React.FC = () => {
           </Typography>
         </Box>
       </Container>
-      <Container maxWidth="lg" sx={{ py: 5 }}>
+      <Container maxWidth="lg" sx={{ py: 5 }}     style={{
+            backgroundImage: "url('/welcome2.jpg')",
+        backgroundSize: 'contain', // Ensures the entire image is visible
+        backgroundRepeat:'no-repeat'
+      }}>
        
 
         {/* Open Positions Section */}
