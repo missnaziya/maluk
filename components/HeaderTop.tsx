@@ -1,112 +1,97 @@
-'use client'
-import { signOut, useSession } from 'next-auth/react'
-import Link from 'next/link'
-import React, { useState, useEffect } from 'react'
-import toast from 'react-hot-toast'
-import { FaArrowRightToBracket, FaRegUser } from 'react-icons/fa6'
+'use client';
+import { signOut, useSession } from 'next-auth/react';
+import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
+import { FaArrowRightToBracket, FaRegUser } from 'react-icons/fa6';
 
 const HeaderTop = () => {
-  const { data: session }: any = useSession()
-  const [dropdownOpen, setDropdownOpen] = useState(false)
-  const [visitCount, setVisitCount] = useState(0)
+  const { data: session }: any = useSession();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [visitCount, setVisitCount] = useState(0);
 
   useEffect(() => {
-    // Retrieve visit count from localStorage or set initial value
-    const storedCount = localStorage.getItem('visitCount')
-    const count = storedCount ? parseInt(storedCount) + 1 : 1
-    setVisitCount(count)
-    localStorage.setItem('visitCount', count.toString())
-  }, [])
+    const storedCount = localStorage.getItem('visitCount');
+    const count = storedCount ? parseInt(storedCount) + 1 : 1;
+    setVisitCount(count);
+    localStorage.setItem('visitCount', count.toString());
+  }, []);
 
   const handleLogout = () => {
-    setTimeout(() => signOut({ callbackUrl: '/login' }), 1000)
-    toast.success('Logout successful!')
-  }
+    setTimeout(() => signOut({ callbackUrl: '/login' }), 1000);
+    toast.success('Logout successful!');
+  };
 
   const toggleDropdown = () => {
-    setDropdownOpen(prev => !prev)
+    setDropdownOpen((prev) => !prev);
     setTimeout(() => {
-      setDropdownOpen(false)
-    }, 5000)
-  }
+      setDropdownOpen(false);
+    }, 5000);
+  };
 
   return (
-    <div className='h-10 px-5 text-white bg-black max-lg:px-5 max-lg:h-16 max-[573px]:px-0'>
-      <div className='flex justify-between h-full items-center gap-10 max-lg:flex-col max-lg:gap-4 max-lg:justify-center max-lg:items-center max-w-screen-2xl mx-auto max-[573px]:px-0'>
-      <ul className='flex items-center h-full w-full gap-x-5 max-[370px]:text-sm max-[370px]:gap-x-2'>
-  {/* Visit Count */}
-  <li className='font-semibold text-white-500 flex items-center gap-x-2'>
-    <span>Visits:</span>
-    <span>{visitCount}</span>
-  </li>
-  {/* Marquee for displaying offers */}
-  <li className='font-semibold text-yellow-500 w-full overflow-hidden'>
-    <div className='scrolling-text text-sm max-md:text-xs'>
-      🎉 Flat 50% Off on Sheetmasks! | 🚚 Free Shipping on Orders Above $100 | 🛍️ New Arrivals in Fashion! | 📞 Call us now: +91 8588801711
-    </div>
-  </li>
-</ul>
+    <div className="h-10 px-5 text-white bg-black max-lg:px-5 max-lg:h-16 max-[573px]:px-0">
+      <div className="flex justify-between items-center h-full gap-5 max-lg:flex-col max-lg:gap-4 max-lg:justify-center max-w-screen-xl mx-auto">
+        {/* Visit Count and Marquee */}
+        <ul className="flex items-center gap-5 w-full max-[370px]:gap-2">
+          <li className="font-semibold text-white">
+            Visits: <span>{visitCount}</span>
+          </li>
+          <li className="flex-1 overflow-hidden">
+            <div className="scrolling-text text-sm text-yellow-500 max-md:text-xs">
+              🎉 Flat 50% Off on Sheetmasks! | 🚚 Free Shipping on Orders Above $100 | 🛍️ New Arrivals in Fashion! | 📞 Call us now: +91 8588801711
+            </div>
+          </li>
+        </ul>
 
-        <ul className='flex items-center gap-x-5 h-full max-[370px]:text-sm max-[370px]:gap-x-2 font-semibold'>
+        {/* Login/Register/Profile Section */}
+        <ul className="flex items-center gap-5 font-semibold max-[370px]:gap-2">
           {!session ? (
             <>
-              <li className='flex items-center'>
-                <Link
-                  href='/login'
-                  className='flex items-center gap-x-2 font-semibold'
-                >
-                  <FaRegUser className='text-white' />
+              <li>
+                <Link href="/login" className="flex items-center gap-2">
+                  <FaRegUser className="text-white" />
                   <span>Login</span>
                 </Link>
               </li>
-              <li className='flex items-center'>
-                <Link
-                  href='/register'
-                  className='flex items-center gap-x-2 font-semibold'
-                >
-                  <FaRegUser className='text-white' />
+              <li>
+                <Link href="/register" className="flex items-center gap-2">
+                  <FaRegUser className="text-white" />
                   <span>Register</span>
                 </Link>
               </li>
             </>
           ) : (
             <>
-              <span className='ml-10 text-base'>{session.user?.email}</span>
-              {session.user?.role == 'admin' && (
-                <span className='ml-2 text-base'>
-                  <Link href='/admin'>Admin</Link>
+              <span className="text-base">{session.user?.email}</span>
+              {session.user?.role === 'admin' && (
+                <span>
+                  <Link href="/admin">Admin</Link>
                 </span>
               )}
-              <div className='relative flex items-center'>
-                <button onClick={toggleDropdown} className='flex items-center'>
-                  <FaRegUser className='text-white' />
+              <div className="relative">
+                <button onClick={toggleDropdown}>
+                  <FaRegUser className="text-white" />
                 </button>
-                {/* Dropdown Menu */}
                 {dropdownOpen && (
-                  <div className='absolute right-0 z-10 mt-20 w-48 bg-white text-black rounded-md shadow-lg'>
-                    <ul className='py-1'>
+                  <div className="absolute right-0 z-10 mt-2 w-48 bg-white text-black rounded shadow">
+                    <ul>
                       <li>
-                        <Link
-                          href='/profile'
-                          className='block px-4 py-2 hover:bg-gray-200'
-                        >
+                        <Link href="/profile" className="block px-4 py-2 hover:bg-gray-200">
                           My Profile
                         </Link>
                       </li>
                       <li>
-                        <Link
-                          href='/orders'
-                          className='block px-4 py-2 hover:bg-gray-200'
-                        >
+                        <Link href="/orders" className="block px-4 py-2 hover:bg-gray-200">
                           My Orders
                         </Link>
                       </li>
                       <li>
                         <button
-                          onClick={() => handleLogout()}
-                          className='flex items-center text-left px-4 py-2 hover:bg-gray-200'
+                          onClick={handleLogout}
+                          className="flex items-center px-4 py-2 w-full hover:bg-gray-200"
                         >
-                          <FaArrowRightToBracket className='mr-2' />
+                          <FaArrowRightToBracket className="mr-2" />
                           Log out
                         </button>
                       </li>
@@ -124,7 +109,6 @@ const HeaderTop = () => {
           white-space: nowrap;
           overflow: hidden;
           animation: scroll-left 25s linear infinite;
-          max-width: 100%;
         }
 
         @keyframes scroll-left {
@@ -137,7 +121,7 @@ const HeaderTop = () => {
         }
       `}</style>
     </div>
-  )
-}
+  );
+};
 
-export default HeaderTop
+export default HeaderTop;

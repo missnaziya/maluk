@@ -447,7 +447,7 @@ const Footer = () => {
           <Grid item xs={12} md={6} lg={3}>
             <Box>
               <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
-               Join Us
+               Company
               </Typography>
               <Box component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
                 {[

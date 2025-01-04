@@ -408,6 +408,12 @@ const Header = () => {
             >
               {/* Example category items */}
               <MenuItem onClick={handleAboutMenuClose}>
+              <Link href='/about-company' passHref>
+              About Company
+              </Link>
+             
+              </MenuItem>
+              <MenuItem onClick={handleAboutMenuClose}>
               <Link href='/faq' passHref>
               FAQS
               </Link>
