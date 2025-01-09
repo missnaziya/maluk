@@ -16,13 +16,13 @@ const tabData = [
   {
     label: "All",
     images: [
-      "/gallery/bday1.jpg",
-      "/gallery/bday2.jpg",
-      "/gallery/bday3.jpg",
+      // "/gallery/bday1.jpg",
+      // "/gallery/bday2.jpg",
+      // "/gallery/bday3.jpg",
       "/gallery/bday4.jpg",
-      "/gallery/snap1.jpg",
-      "/gallery/snap3.jpg",
-      "/gallery/snap4.jpg",
+      // "/gallery/snap1.jpg",
+      // "/gallery/snap3.jpg",
+      // "/gallery/snap4.jpg",
       "/gallery/gallery1.jpg",
       "/gallery/gallery2.jpg",
       "/gallery/gallery3.jpg",
@@ -32,9 +32,9 @@ const tabData = [
   {
     label: "Birthday Celebration",
     images: [
-      "/gallery/bday1.jpg",
-      "/gallery/bday2.jpg",
-      "/gallery/bday3.jpg",
+      // "/gallery/bday1.jpg",
+      // "/gallery/bday2.jpg",
+      // "/gallery/bday3.jpg",
       "/gallery/bday4.jpg",
     ],
   },
@@ -52,17 +52,17 @@ const tabData = [
     label: "Office Snap",
     images: [
       "/gallery/snap1.jpg",
-      "/gallery/snap3.jpg",
-      "/gallery/snap4.jpg",
+      // "/gallery/snap3.jpg",
+      // "/gallery/snap4.jpg",
     ],
   },
   {
     label: "Festival Celebration",
     images: [
-      "/home-banner3.jpg",
-      "/home-banner3.jpg",
-      "/home-banner3.jpg",
-      "/home-banner3.jpg",
+      // "/home-banner3.jpg",
+      // "/home-banner3.jpg",
+      // "/home-banner3.jpg",
+      // "/home-banner3.jpg",
     ],
   },
 ];

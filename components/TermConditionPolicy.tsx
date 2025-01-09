@@ -184,10 +184,17 @@ const TermConditionPolicy: React.FC = () => {
 
           {/* Additional Sections */}
           <Section title="Payment Details" content="We accept the following modes of payment: Credit Cards, Debit Cards, Net Banking, UPI, and Wallet Payments. All payments are securely processed through our trusted payment gateway providers." />
-          <Section title="Shipment Details" content="Orders are processed and shipped within 2-3 business days. Delivery timelines depend on the destination and chosen shipping method. We use Surface Transport for most deliveries." />
+          <Section title="Shipment Policy" content="The product will be delivered within 4-5 days. Delivery timelines depend on the destination and chosen shipping method. We use Surface Transport for most deliveries." />
           <Section title="Return Policy" content="Products can be returned within 10 days of delivery if they are damaged, defective, or incorrect. To initiate a return, contact our support team with your order details." />
-          <Section title="Exchange Policy" content="Exchanges are applicable only for damaged or defective items. Ensure the product is unused and in its original packaging when requesting an exchange." />
+          <Section title="Refund Policy" content="Once your refund is approved, the amount will be credited to the original payment method in 7-8 days." />
+          <Section title="Exchange Policy" content="You can request for a exchange within 2 days of the product to be delivered. once the request is approved you will get your exchange product in 5 days. Exchanges are applicable only for damaged or defective items. Ensure the product is unused and in its original packaging when requesting an exchange." />
           <Section title="Mode of Transport" content="We primarily use Surface Transport for shipping products to ensure safe and reliable delivery to your doorstep." />
+
+
+
+  {/* Additional Sections */}
+
+
 
           <Typography variant="h3" sx={headingStyle}>
             Contact Us

@@ -13,10 +13,11 @@ const CertificateCard: React.FC<CertificateCardProps> = ({ image, title }) => (
   <Paper
     elevation={3}
     sx={{
-      p: 2,
+        m:1,
+      p: 1,
       textAlign: 'center',
       border:"1px solid #b09614",
-      borderRadius: 2,
+    //   borderRadius: 2,
       transition: 'transform 0.3s, box-shadow 0.3s',
       '&:hover': {
         transform: 'scale(1.05)',
@@ -29,9 +30,9 @@ const CertificateCard: React.FC<CertificateCardProps> = ({ image, title }) => (
       alt={title}
       style={{ width: '100%', height: 'auto', borderRadius: '10px' }}
     />
-    <Typography variant="h6" mt={2}>
+    {/* <Typography variant="h6" mt={2}>
       {title}
-    </Typography>
+    </Typography> */}
   </Paper>
 );
 
@@ -82,7 +83,7 @@ const OurCertificate: React.FC = () => {
         <Typography variant="h4" textAlign="center" mb={4}>
           Our Certificates
         </Typography>
-        <Card className="p-4">
+        <Card className="p-8 m-4">
           <Slider {...settings}>
             {certificates.map((cert, index) => (
               <Box key={index} px={2}>

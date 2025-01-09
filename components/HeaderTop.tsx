@@ -39,8 +39,10 @@ const HeaderTop = () => {
           </li>
           <li className="flex-1 overflow-hidden">
             <div className="scrolling-text text-sm text-yellow-500 max-md:text-xs">
+         Maluk Forever |  📧 Contact us: operations@malukforever.com | 📞 Call us now: +91 8588801711  </div>
+            {/* <div className="scrolling-text text-sm text-yellow-500 max-md:text-xs">
               🎉 Flat 50% Off on Sheetmasks! | 🚚 Free Shipping on Orders Above $100 | 🛍️ New Arrivals in Fashion! | 📞 Call us now: +91 8588801711
-            </div>
+            </div> */}
           </li>
         </ul>
 
