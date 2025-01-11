@@ -29,6 +29,20 @@ export default async function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-5JHK9GMC');
+            `,
+          }}
+        />
+        {/* End Google Tag Manager */}
+        
         {/* Google Analytics Tag */}
         <script
           async
@@ -46,6 +60,17 @@ export default async function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-5JHK9GMC"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+
         <SessionProvider session={session}>
           <Header />
           <Providers>{children}</Providers>
@@ -66,14 +91,9 @@ export default async function RootLayout({
 // import Providers from "@/Providers";
 // import { getServerSession } from "next-auth";
 // import "svgmap/dist/svgMap.min.css";
-// import Header2 from "@/components/Header2";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
 // import Head from "next/head";
-// // pages/_app.js or _app.tsx
-// // pages/_app.tsx or pages/_document.tsx
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
-
-
 // import NewsLetterFooter from "@/components/NewsLetterfooter";
 
 // const inter = Inter({ subsets: ["latin"] });
@@ -91,17 +111,28 @@ export default async function RootLayout({
 //   const session = await getServerSession();
 //   return (
 //     <html lang="en" data-theme="light">
-  
 //       <head>
 //         <link rel="icon" href="/favicon.ico" />
-  
-  
-  
-      
+        
+//         {/* Google Analytics Tag */}
+//         <script
+//           async
+//           src="https://www.googletagmanager.com/gtag/js?id=G-N6NHE0FRVT"
+//         ></script>
+//         <script
+//           dangerouslySetInnerHTML={{
+//             __html: `
+//               window.dataLayer = window.dataLayer || [];
+//               function gtag(){dataLayer.push(arguments);}
+//               gtag('js', new Date());
+//               gtag('config', 'G-N6NHE0FRVT');
+//             `,
+//           }}
+//         />
 //       </head>
 //       <body className={inter.className}>
+      
 //         <SessionProvider session={session}>
-//           {/* <Header2 /> */}
 //           <Header />
 //           <Providers>{children}</Providers>
 //           <Footer />
@@ -110,7 +141,5 @@ export default async function RootLayout({
 //     </html>
 //   );
 // }
-
-
 
 

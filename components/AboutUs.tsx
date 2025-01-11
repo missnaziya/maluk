@@ -13,7 +13,7 @@ const AboutUs = () => {
               At <strong className=' text-yellow-600'>MalukForever</strong>, we believe skincare should be simple, effective, and accessible to
               everyone. Our mission is to provide skin-friendly products that not only nourish your skin but are also
               budget-conscious. We blend the power of nature with the precision of science to create formulations that
-              are safe, effective, and affordable—because great skincare shouldn't come with a high price tag.
+              are safe, effective, and affordable—because great skincare should not come with a high price tag.
             </Typography>
           </Grid>
           <Grid item xs={12} md={8}>

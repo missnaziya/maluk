@@ -73,10 +73,10 @@ const SingleProductPage = ({ params }: SingleProductPageProps) => {
             {product?.alternateImage1 && (
               <Image
                 src={`/${product.alternateImage1}`}
-                width={100}
+                width={90}
                 height={100}
                 alt="alternate image 1"
-                className="w-auto h-auto border border-gray-300 shadow-sm hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
+                className=" border border-gray-300 shadow-sm hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
                 onMouseEnter={() => handleImageHover(`/${product.alternateImage1}`)}
                 onMouseLeave={() => setMainImage(product.mainImage ? `/${product.mainImage}` : "/product_placeholder.jpg")}
               />
@@ -84,10 +84,10 @@ const SingleProductPage = ({ params }: SingleProductPageProps) => {
             {product?.alternateImage2 && (
               <Image
                 src={`/${product.alternateImage2}`}
-                width={100}
+                width={90}
                 height={100}
                 alt="alternate image 2"
-                className="w-auto h-auto border border-gray-300 shadow-sm hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
+                className=" border border-gray-300 shadow-sm hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
                 onMouseEnter={() => handleImageHover(`/${product.alternateImage2}`)}
                 onMouseLeave={() => setMainImage(product.mainImage ? `/${product.mainImage}` : "/product_placeholder.jpg")}
               />
@@ -95,10 +95,10 @@ const SingleProductPage = ({ params }: SingleProductPageProps) => {
             {product?.alternateImage3 && (
               <Image
                 src={`/${product.alternateImage3}`}
-                width={100}
+                width={90}
                 height={100}
                 alt="alternate image 3"
-                className="w-auto h-auto border border-gray-300 shadow-sm hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
+                className=" border border-gray-300 shadow-sm hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
                 onMouseEnter={() => handleImageHover(`/${product.alternateImage3}`)}
                 onMouseLeave={() => setMainImage(product.mainImage ? `/${product.mainImage}` : "/product_placeholder.jpg")}
               />
@@ -106,10 +106,10 @@ const SingleProductPage = ({ params }: SingleProductPageProps) => {
             {product?.alternateImage4 && (
               <Image
                 src={`/${product.alternateImage4}`}
-                width={100}
+                width={90}
                 height={100}
                 alt="alternate image 4"
-                className="w-auto h-auto border border-gray-300 shadow-sm hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
+                className=" border border-gray-300 shadow-sm hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
                 onMouseEnter={() => handleImageHover(`/${product.alternateImage4}`)}
                 onMouseLeave={() => setMainImage(product.mainImage ? `/${product.mainImage}` : "/product_placeholder.jpg")}
               />
@@ -120,10 +120,10 @@ const SingleProductPage = ({ params }: SingleProductPageProps) => {
           <div>
             <Image
               src={mainImage}
-              width={500}
+              width={400}
               height={500}
               alt="main image"
-              className="w-auto h-auto"
+              // className="w-auto h-auto"
             />
             
             {/* Thumbnail Images (Existing Mapping) */}

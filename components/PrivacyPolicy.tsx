@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Container, Typography, List, ListItem, Link } from "@mui/material";
 import SectionTitle from "./SectionTitle";
 
+
 const PrivacyPolicy: React.FC = () => {
   return (
     <>
@@ -28,9 +29,13 @@ const PrivacyPolicy: React.FC = () => {
         </Typography>
         <Typography sx={paragraphStyle}>
           We respect your privacy and are committed to protecting your personal information. For more details on how we
-          collect, use, and protect your data, please review our Privacy Policy.
+          collect, use, and protect your data, please review our Terms and Conditions.
         </Typography>
 
+ <Section title="Shipment Policy" content="The product will be delivered within 4-5 days. Delivery timelines depend on the destination and chosen shipping method. We use Surface Transport for most deliveries." />
+          <Section title="Return Policy" content="Products can be returned within 10 days of delivery if they are damaged, defective, or incorrect. To initiate a return, contact our support team with your order details." />
+          <Section title="Refund Policy" content="Once your refund is approved, the amount will be credited to the original payment method in 7-8 days." />
+          <Section title="Exchange Policy" content="You can request for a exchange within 2 days of the product to be delivered. once the request is approved you will get your exchange product in 5 days. Exchanges are applicable only for damaged or defective items. Ensure the product is unused and in its original packaging when requesting an exchange." />
         <Typography variant="h3" sx={headingStyle}>
           Intellectual Property
         </Typography>
@@ -112,6 +117,15 @@ const PrivacyPolicy: React.FC = () => {
     </>
   );
 };
+const Section: React.FC<{ title: string; content: string }> = ({ title, content }) => (
+  <>
+    <Typography variant="h3" sx={headingStyle}>
+      {title}
+    </Typography>
+    <Typography sx={paragraphStyle}>{content}</Typography>
+  </>
+);
+
 
 // Styling using the sx prop
 const headingStyle = {

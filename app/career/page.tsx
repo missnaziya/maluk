@@ -161,7 +161,7 @@ const Career: React.FC = () => {
               <div className="side">
                 <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
                   <Icon>
-                    {/* <Image src="/assets/images/icons/team.png" alt="Team" width={80} height={80} /> */}
+                    <Image src="/icons/team.png" alt="Team" width={80} height={80} />
                   </Icon>
                   <Box sx={{ ml: 2 }}>
                     <Typography variant="h4">Impactful Work</Typography>
@@ -173,7 +173,7 @@ const Career: React.FC = () => {
                 <hr />
                 <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
                   <Icon>
-                    {/* <Image src="/assets/images/icons/career.png" alt="Career" width={80} height={80} /> */}
+                    <Image src="/icons/career.png" alt="Career" width={80} height={80} />
                   </Icon>
                   <Box sx={{ ml: 2 }}>
                     <Typography variant="h4">Professional Growth</Typography>
@@ -185,7 +185,7 @@ const Career: React.FC = () => {
                 <hr />
                 <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
                   <Icon>
-                    {/* <Image src="/assets/images/icons/excellent.png" alt="Excellence" width={80} height={80} /> */}
+                    <Image src="/icons/excellent.png" alt="Excellence" width={80} height={80} />
                   </Icon>
                   <Box sx={{ ml: 2 }}>
                     <Typography variant="h4">Commitment to Excellence</Typography>
@@ -197,7 +197,7 @@ const Career: React.FC = () => {
                 <hr />
                 <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
                   <Icon>
-                    {/* <Image src="/assets/images/icons/project-management.png" alt="Innovative Culture" width={80} height={80} /> */}
+                    <Image src="/icons/project-management.png" alt="Innovative Culture" width={80} height={80} />
                   </Icon>
                   <Box sx={{ ml: 2 }}>
                     <Typography variant="h4">Innovative Culture</Typography>
@@ -209,7 +209,7 @@ const Career: React.FC = () => {
                 <hr />
                 <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
                   <Icon>
-                    {/* <Image src="/assets/images/icons/Buttondge.png" alt="Rewarding Benefits" width={80} height={80} /> */}
+                    <Image src="/icons/Badge.png" alt="Rewarding Benefits" width={80} height={80} />
                   </Icon>
                   <Box sx={{ ml: 2 }}>
                     <Typography variant="h4">Rewarding Benefits</Typography>
