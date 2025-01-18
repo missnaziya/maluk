@@ -69,7 +69,7 @@ const SingleProductPage = ({ params }: SingleProductPageProps) => {
         <div className="flex justify-center gap-x-4 pt-10 max-lg:flex-col items-center gap-y-5 px-5">
           
           {/* Left side: Alternate Images */}
-          <div className="flex flex-col gap-y-2">
+          <div className="flex flex-col gap-y-0">
             {product?.alternateImage1 && (
               <Image
                 src={`/${product.alternateImage1}`}
@@ -87,7 +87,7 @@ const SingleProductPage = ({ params }: SingleProductPageProps) => {
                 width={90}
                 height={100}
                 alt="alternate image 2"
-                className=" border border-gray-300 shadow-sm hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
+                className=" border border-gray-300 shadow-sm hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer "
                 onMouseEnter={() => handleImageHover(`/${product.alternateImage2}`)}
                 onMouseLeave={() => setMainImage(product.mainImage ? `/${product.mainImage}` : "/product_placeholder.jpg")}
               />
@@ -123,19 +123,21 @@ const SingleProductPage = ({ params }: SingleProductPageProps) => {
               width={400}
               height={500}
               alt="main image"
+       className="bg-gray-200 transition-opacity duration-300 ease-in-out opacity-100"
               // className="w-auto h-auto"
             />
             
             {/* Thumbnail Images (Existing Mapping) */}
-            <div className="flex justify-around mt-0 flex-wrap gap-y-1 max-[500px]:justify-center max-[500px]:gap-x-1">
+            <div className="flex justify-around mt-0 flex-wrap gap-y-0 max-[500px]:justify-center max-[500px]:gap-x-1">
               {images?.map((imageItem: ImageItem) => (
                 <Image
+             
                   key={imageItem.imageID}
                   src={`/${imageItem.image}`}
                   width={100}
                   height={100}
                   alt="not found"
-                  className="w-auto h-auto"
+                  className="w-auto h-auto bg-gray-200"
                   onMouseEnter={() => handleImageHover(`/${imageItem.image}`)}
                   onMouseLeave={() => setMainImage(product.mainImage ? `/${product.mainImage}` : "/product_placeholder.jpg")}
                 />

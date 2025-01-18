@@ -34,8 +34,15 @@ const HeaderTop = () => {
       <div className="flex justify-between items-center h-full gap-5 max-lg:flex-col max-lg:gap-4 max-lg:justify-center max-w-screen-xl mx-auto">
         {/* Visit Count and Marquee */}
         <ul className="flex items-center gap-5 w-full max-[370px]:gap-2">
-          <li className="font-semibold text-white">
-            Visits: <span>{visitCount}</span>
+          <li className="flex gap-2 font-semibold text-white">
+            Visits: <span>
+
+         
+<a href="https://www.hitwebcounter.com" target="_blank">
+<img src="https://hitwebcounter.com/counter/counter.php?page=18513225&style=0025&nbdigits=5&type=page&initCount=24" title="Counter Widget" alt="Visit counter For Websites"  
+ style={{ width: '80px', height: 'auto' }} /></a>           
+     
+            </span>
           </li>
           <li className="flex-1 overflow-hidden">
             <div className="scrolling-text text-sm text-yellow-500 max-md:text-xs">

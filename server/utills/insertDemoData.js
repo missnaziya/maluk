@@ -54,7 +54,7 @@ const demoProducts = [
     rating: 5,
     description:
       "Our Face Sheet is designed to provide deep hydration and nourishment. Infused with vitamins and natural extracts, it delivers a refreshing boost to your skin, leaving it revitalized and glowing.",
-    mainImage: "Red-Wine.png",
+    mainImage: "Red-Wine-main.png",
     alternateImage1: "Red-Wine.png",
     alternateImage2: "Red-Wine-Back.png",
     alternateImage3: "Red-Wine.png",
