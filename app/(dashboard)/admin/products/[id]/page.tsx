@@ -270,7 +270,7 @@ const DashboardProductDetails = ({
               htmlFor='file-upload'
               className='block mb-2 text-sm font-medium text-gray-700'
             >
-              alternate Image
+              alternate Image.
             </label>
             <input
               type='file'

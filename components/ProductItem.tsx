@@ -80,7 +80,7 @@ const ProductItem = ({
                 }
                 alt="Secondary Image 1"
                 sx={{
-                  background:"#d6cdcd",
+                  background:"white",
                   position: 'absolute',
                   top: 0,
                   left: 0,

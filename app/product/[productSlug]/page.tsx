@@ -52,7 +52,7 @@ const SingleProductPage = ({ params }: SingleProductPageProps) => {
       } else {
         setProduct(product);
         setImages(images);
-        setMainImage(product.mainImage ? `/${product.mainImage}` : "/product_placeholder.jpg");
+        setMainImage(product.mainImage ? `/categories/${product.mainImage}` : "/product_placeholder.jpg");
       }
     };
 
@@ -72,26 +72,16 @@ const SingleProductPage = ({ params }: SingleProductPageProps) => {
           <div className="flex flex-col gap-y-0">
             {product?.alternateImage1 && (
               <Image
-                src={`/${product.alternateImage1}`}
+                src={`/categories/${product.alternateImage1}`}
                 width={90}
                 height={100}
                 alt="alternate image 1"
                 className=" border border-gray-300 shadow-sm hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
-                onMouseEnter={() => handleImageHover(`/${product.alternateImage1}`)}
+                onMouseEnter={() => handleImageHover(`/categories/${product.alternateImage1}`)}
                 onMouseLeave={() => setMainImage(product.mainImage ? `/${product.mainImage}` : "/product_placeholder.jpg")}
               />
             )}
-            {product?.alternateImage2 && (
-              <Image
-                src={`/${product.alternateImage2}`}
-                width={90}
-                height={100}
-                alt="alternate image 2"
-                className=" border border-gray-300 shadow-sm hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer "
-                onMouseEnter={() => handleImageHover(`/${product.alternateImage2}`)}
-                onMouseLeave={() => setMainImage(product.mainImage ? `/${product.mainImage}` : "/product_placeholder.jpg")}
-              />
-            )}
+           
             {product?.alternateImage3 && (
               <Image
                 src={`/${product.alternateImage3}`}
@@ -100,6 +90,17 @@ const SingleProductPage = ({ params }: SingleProductPageProps) => {
                 alt="alternate image 3"
                 className=" border border-gray-300 shadow-sm hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer"
                 onMouseEnter={() => handleImageHover(`/${product.alternateImage3}`)}
+                onMouseLeave={() => setMainImage(product.mainImage ? `/${product.mainImage}` : "/product_placeholder.jpg")}
+              />
+            )}
+             {product?.alternateImage2 && (
+              <Image
+                src={`/${product.alternateImage2}`}
+                width={90}
+                height={100}
+                alt="alternate image 2"
+                className=" border border-gray-300 shadow-sm hover:shadow-lg hover:scale-105 transition-transform duration-200 cursor-pointer "
+                onMouseEnter={() => handleImageHover(`/${product.alternateImage2}`)}
                 onMouseLeave={() => setMainImage(product.mainImage ? `/${product.mainImage}` : "/product_placeholder.jpg")}
               />
             )}
@@ -123,7 +124,7 @@ const SingleProductPage = ({ params }: SingleProductPageProps) => {
               width={400}
               height={500}
               alt="main image"
-       className="bg-gray-200 transition-opacity duration-300 ease-in-out opacity-100"
+       className="bg-white-200 transition-opacity duration-300 ease-in-out opacity-100"
               // className="w-auto h-auto"
             />
             
@@ -137,7 +138,7 @@ const SingleProductPage = ({ params }: SingleProductPageProps) => {
                   width={100}
                   height={100}
                   alt="not found"
-                  className="w-auto h-auto bg-gray-200"
+                  className="w-auto h-auto "
                   onMouseEnter={() => handleImageHover(`/${imageItem.image}`)}
                   onMouseLeave={() => setMainImage(product.mainImage ? `/${product.mainImage}` : "/product_placeholder.jpg")}
                 />

@@ -38,9 +38,10 @@ const HeaderTop = () => {
             Visits: <span>
 
          
-<a href="https://www.hitwebcounter.com" target="_blank">
+{/* <a href="https://www.hitwebcounter.com" target="_blank"> */}
 <img src="https://hitwebcounter.com/counter/counter.php?page=18513225&style=0025&nbdigits=5&type=page&initCount=24" title="Counter Widget" alt="Visit counter For Websites"  
- style={{ width: '80px', height: 'auto' }} /></a>           
+ style={{ width: '80px', height: 'auto' }} />
+ {/* </a>            */}
      
             </span>
           </li>
