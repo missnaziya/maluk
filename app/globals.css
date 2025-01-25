@@ -52,5 +52,11 @@
   }
 }
 
+.MuiInputBase-root input,
+.MuiInputBase-root textarea {
+  background-color: #f1efdd !important;
+}
+
+
 
 
