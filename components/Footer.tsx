@@ -377,7 +377,7 @@ const Footer = () => {
           {/* Logo and Payment Section */}
           <Grid item xs={12} md={6} lg={3}>
             <Box sx={{marginLeft:"20px"}}>
-              <Link href="index.html">
+              <Link href="/">
                 <img
                   src="/logo.png"
                   alt="Maluk Forever Logo"

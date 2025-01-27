@@ -27,7 +27,9 @@ export default async function RootLayout({
   return (
     <html lang="en" data-theme="light">
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" 
+        />
+        <link rel="icon" href="/favicon.ico?v=2" />
         
         {/* Google Tag Manager */}
         <script

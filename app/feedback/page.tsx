@@ -84,9 +84,9 @@ const FeedbackPage = () => {
     }
   };
 
-  if (sessionStatus === "loading") {
-    return <h1>Loading...</h1>;
-  }
+  // if (sessionStatus === "loading") {
+  //   return <h1>Loading...</h1>;
+  // }
   return (
     <div className="bg-white">
       <SectionTitle title="Feedback" path="Home | Feedback" />
