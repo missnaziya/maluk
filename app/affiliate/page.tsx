@@ -134,6 +134,7 @@ const Affiliate = () => {
           backgroundColor: "white",
           borderRadius: 2,
           p: 4,
+          m:4,
           boxShadow: 3,
           maxWidth: 800,
           mx: "auto",
