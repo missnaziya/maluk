@@ -174,7 +174,9 @@ function ContactUs() {
 
             <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
               <li className="py-1" style={{ marginBottom: '10px' }}>
-                <i className="fas fa-map-marker-alt" style={{ marginRight: '10px', color: '#f37321' }} />
+                <i className="fas fa-map-marker-alt" style={{ 
+                  // marginRight: '10px',
+                   color: '#f37321' }} />
                 <a
                   href="https://maps.app.goo.gl/JdfaCXvXaFX8GR2N7"
                   target="_blank"
@@ -185,13 +187,17 @@ function ContactUs() {
                 </a>
               </li>
               <li className="py-1" style={{ marginBottom: '10px' }}>
-                <i className="fas fa-envelope" style={{ marginRight: '10px', color: '#f37321' }} />
+                <i className="fas fa-envelope" style={{ 
+                  // marginRight: '10px',
+                   color: '#f37321' }} />
                 <a href="mailto:operations@malukforever.com" style={{ textDecoration: 'none', color: '#333' }}>
                   operations@malukforever.com
                 </a>
               </li>
               <li className="py-1" style={{ marginBottom: '10px' }}>
-                <i className="fas fa-phone-alt" style={{ marginRight: '10px', color: '#f37321' }} />
+                <i className="fas fa-phone-alt" style={{
+                  //  marginRight: '10px',
+                    color: '#f37321' }} />
                 <a href="tel:+918588801711" style={{ textDecoration: 'none', color: '#333' }}>
                   +91 85888 01711
                 </a>

@@ -7,10 +7,10 @@ interface BannerProps {
 const Banner: React.FC<BannerProps> = ({ bg }) => {
   return (
     <div
-      className="h-[350px] border-b pt-16 border-white mb-2 max-sm:h-[300px] max-sm:pt-16 bg-center bg-no-repeat"
+      className="h-[450px] border-b pt-16 border-white mb-2 max-sm:h-[300px] max-sm:pt-16 bg-center bg-no-repeat"
       style={{
         background: bg,
-        backgroundSize: 'contain', // Ensures the entire image is visible
+        backgroundSize: 'cover !important', // Ensures the entire image is visible
         backgroundRepeat:'no-repeat'
       }}
     >

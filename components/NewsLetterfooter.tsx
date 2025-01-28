@@ -71,9 +71,9 @@ const NewsLetterFooter = () => {
           <Grid item xs={12} md={5}>
             <Box px={2}>
               <img
-                src="category/snailmucin-facemask.png"
+                src="snail-mucin.jpg"
                 alt="Newsletter Banner"
-                style={{ width: '40%', height: '40%' }}
+                style={{ width: '50%', height: '50%' }}
               />
             </Box>
           </Grid>

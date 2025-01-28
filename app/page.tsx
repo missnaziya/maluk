@@ -44,7 +44,7 @@ import Welcome from "@/components/welcome";
         <Hero />
         {/* <TopSellingProducts props={{name:"topselling-products"}} /> */}
         <Categories />
-        <OfferBanner />
+        <ExtraBanner/>
         <SkinCareCategory />
         {/* <BrandSection /> */}
         {/* <ProductCategory /> */}
@@ -54,8 +54,8 @@ import Welcome from "@/components/welcome";
         <Welcome/>
         <Testimonials />
 
-        <ExtraBanner/>
         <CustomerReview/>
+        <OfferBanner />
         <LatestBlogs />
         {/* <InspiredProducts props={{name:"inspired-products"}} /> */}
       </>

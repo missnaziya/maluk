@@ -274,7 +274,7 @@ const Affiliate = () => {
           required
         />
         {/* State Selection */}
-        <Box>
+        {/* <Box>
           <InputLabel id="state-label">State</InputLabel>
           <Select
             labelId="state-label"
@@ -286,9 +286,49 @@ const Affiliate = () => {
             <MenuItem value="andhra-pradesh">Andhra Pradesh</MenuItem>
             <MenuItem value="arunachal-pradesh">Arunachal Pradesh</MenuItem>
             <MenuItem value="assam">Assam</MenuItem>
-            {/* Add other states as necessary */}
           </Select>
-        </Box>
+        </Box> */}
+
+<Box>
+  <InputLabel id="state-label">State</InputLabel>
+  <Select
+    labelId="state-label"
+    defaultValue=""
+    fullWidth
+    required
+  >
+    <MenuItem value="">Select a State</MenuItem>
+    <MenuItem value="andhra-pradesh">Andhra Pradesh</MenuItem>
+    <MenuItem value="arunachal-pradesh">Arunachal Pradesh</MenuItem>
+    <MenuItem value="assam">Assam</MenuItem>
+    <MenuItem value="bihar">Bihar</MenuItem>
+    <MenuItem value="chhattisgarh">Chhattisgarh</MenuItem>
+    <MenuItem value="goa">Goa</MenuItem>
+    <MenuItem value="gujarat">Gujarat</MenuItem>
+    <MenuItem value="haryana">Haryana</MenuItem>
+    <MenuItem value="himachal-pradesh">Himachal Pradesh</MenuItem>
+    <MenuItem value="jharkhand">Jharkhand</MenuItem>
+    <MenuItem value="karnataka">Karnataka</MenuItem>
+    <MenuItem value="kerala">Kerala</MenuItem>
+    <MenuItem value="madhya-pradesh">Madhya Pradesh</MenuItem>
+    <MenuItem value="maharashtra">Maharashtra</MenuItem>
+    <MenuItem value="manipur">Manipur</MenuItem>
+    <MenuItem value="meghalaya">Meghalaya</MenuItem>
+    <MenuItem value="mizoram">Mizoram</MenuItem>
+    <MenuItem value="nagaland">Nagaland</MenuItem>
+    <MenuItem value="odisha">Odisha</MenuItem>
+    <MenuItem value="punjab">Punjab</MenuItem>
+    <MenuItem value="rajasthan">Rajasthan</MenuItem>
+    <MenuItem value="sikkim">Sikkim</MenuItem>
+    <MenuItem value="tamil-nadu">Tamil Nadu</MenuItem>
+    <MenuItem value="telangana">Telangana</MenuItem>
+    <MenuItem value="tripura">Tripura</MenuItem>
+    <MenuItem value="uttar-pradesh">Uttar Pradesh</MenuItem>
+    <MenuItem value="uttarakhand">Uttarakhand</MenuItem>
+    <MenuItem value="west-bengal">West Bengal</MenuItem>
+  </Select>
+</Box>
+
 
         <Box>
           <Typography>Are u Open for Barter Collaboration?</Typography>

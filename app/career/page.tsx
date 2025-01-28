@@ -209,7 +209,7 @@ const Career: React.FC = () => {
                 <hr />
                 <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
                   <Icon>
-                    <Image src="/icons/Badge.png" alt="Rewarding Benefits" width={80} height={80} />
+                    <Image src="/icons/badge.png" alt="Rewarding Benefits" width={80} height={80} />
                   </Icon>
                   <Box sx={{ ml: 2 }}>
                     <Typography variant="h4">Rewarding Benefits</Typography>
